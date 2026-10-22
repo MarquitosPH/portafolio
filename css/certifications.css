@@ -1,0 +1,221 @@
+.certifications {
+  position: relative;
+  z-index: 2;                      /* por encima de contacto: la sombra se pinta sobre el verde */
+  background-color: #6766CC;
+
+  --floor: 14.65vw;                /* alto real del SVG (211/1440 de su ancho) */
+  --floor-shadow: 3.3vw;           /* ~23% inferior del SVG: es solo sombra */
+
+  padding-block: clamp(36px, 4.5vw, 72px);
+  padding-bottom: calc(var(--floor) - var(--floor-shadow) + 4vw);  /* piso visible + aire sobre él */
+
+  overflow-x: clip;                /* recorta las nubes por los lados */
+  overflow-y: visible;             /* deja salir la sombra hacia abajo */
+}
+
+.certifications__inner {
+  position: relative;  
+  --container: 1020px;    /* ← ancla de los stickers (decisión B) */
+}
+.certifications h2 {
+  position: relative;
+  z-index: 1;                 
+  margin: 0 0 clamp(9px, 1.4vw, 22px);
+  font-family: 'Midnight Galactic', sans-serif;
+  font-size: clamp(27px, 3.75vw, 54px);
+  line-height: clamp(75px, 8.6vw, 86px);
+  font-weight: 400;
+  color: #FCF8ED;
+  text-align: center;
+  text-shadow: 3px 0 0 #020202;
+  -webkit-text-stroke: 1.5px var(--navy);
+  paint-order: stroke fill;
+  text-transform: uppercase;
+}
+.certs-grid {
+    display: grid;
+    grid-template-columns: 703fr 552fr;         /* misma proporción que Figma, sigue siendo fluido */
+    grid-template-rows: repeat(3, 1fr);
+    column-gap: clamp(6px, 0.75vw, 10px);
+    row-gap: clamp(9px, 1.3vw, 18px);
+}
+.cert-card {
+  position: relative;
+  z-index: 1;                                  /* por encima de las nubes */
+  overflow: hidden;
+  border-radius: 24px;
+  border: var(--glass-border);
+  background: rgba(38, 44, 107, 0.25); 
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.32);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);  /* Safari */
+}
+.cert-card.card-top {
+  grid-row: span 3;
+  --pad: clamp(9px, 1.35vw, 19px);
+}
+
+/* la imagen sale del flujo: ya no decide la altura */
+.cert-card.card-top .cert-open {
+  position: absolute;
+  inset: var(--pad);
+  width: auto;
+  height: auto;
+}
+
+.cert-card.card-top .cert-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 18px;
+  object-fit: cover;
+}
+
+.cert-card.card-top .cert-content h3 {
+  font-size: clamp(21px, 2.5vw, 36px);
+  color: #353264;                 /* oscuro, porque va sobre papel blanco */
+}
+.cert-content{
+    position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: clamp(15px, 2.25vw, 33px);
+  pointer-events: none;
+}
+.cert-card .cert-img{
+    display: block;
+    width: 100%;
+     height: 100%; 
+    object-fit: cover;
+}
+
+.cert-content h3{
+    margin: 0;
+    font-family: "Bagel Fat One";
+    font-weight: 400;
+    font-size: clamp(15px, 1.9vw, 27px);
+    line-height: 1.05;
+    color: var(--cream);
+}
+.cert-card:not(.card-top) {
+  aspect-ratio: 552 / 147;
+}
+.cert-open {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+.cert-card:not(.card-top) .cert-content {
+  inset: 0;                    /* ocupa toda la tarjeta, no solo el borde inferior */
+  justify-content: center;     /* centra chip + título en vertical (el eje es column) */
+  padding-block: 0;            /* el padding vertical ya sobra; el lateral se queda */
+}
+.cert-card:not(.card-top) .cert-img {
+  display: none;
+}
+
+.cert-card:not(.card-top) .cert-open {
+  position: absolute;
+  inset: 0;
+  z-index: 2;                 /* por encima del texto, para que el clic llegue al botón */
+}
+
+/* Los botones de "seleccionar destacada" no se usan por ahora */
+.cert-select {
+  display: none;
+}
+.cert-modal {
+  width: min(92vw, 900px);
+  padding: 0;                             /* importante para cerrar al hacer clic afuera (ver JS) */
+  border: 3px solid var(--navy); 
+  border-radius: 18px; 
+  overflow: hidden;
+  background: #fff;
+}
+
+.cert-modal::backdrop {                   /* la capa oscura detrás */
+  background: rgba(10, 12, 40, .7);
+  backdrop-filter: blur(4px);
+}
+
+.cert-modal-img {
+  display: block;
+  width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+}
+
+.cert-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--cream);
+}
+.cert-content .chip {
+    padding: 5px 8px;
+  border-radius: 999px;
+  background: var(--cream);          /* #F2E8CF */
+  color: var(--navy);                /* #262C6B */
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.08em;            /* 0.88px sobre 11px */
+  text-transform: uppercase;
+}
+.checker-floor {
+  position: absolute;
+  left: 0;
+  bottom: calc(var(--floor-shadow) * -1);  
+  width: 100%;
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.deco-flower,
+.deco-icecream {
+  position: absolute;
+  z-index: 3;                              /* encima del piso y de las tarjetas */
+  height: auto;
+  pointer-events: none;
+}
+
+.deco-flower {
+   width: clamp(90px, 15.75vw, 240px);       /* Figma: 303px */
+  left: 8%;
+  bottom: 2vw;                             /* ajusta hasta que la patineta toque el piso */
+}
+
+.deco-icecream {
+  width: clamp(75px, 11.25vw, 180px);      /* Figma: ~229px */
+  left: 78%;
+  bottom: 2vw;
+}
+
+
+.cloud{
+    position: absolute;
+  z-index: 0;                    /* ← por encima de las tarjetas (ver nota) */
+  height: auto;
+  pointer-events: none;  
+}
+.cloud-1 { width: 18.5vw; left: -1%;  top: 6.5vw; }    /* grande, izquierda, detrás del título */
+.cloud-2 { width: 16vw;   left: -5%;  top: 31vw;  }    /* izquierda, medio tapada por la tarjeta */
+.cloud-3 { width: 19vw;   left: 80%;  top: -1.3vw; }   /* arriba a la derecha */
+.cloud-4 { width: 9vw;    left: 92%;  top: 6vw;    }   /* pequeña, a la derecha */
+.cloud-5 { width: 18.5vw; left: 85%;  top: 28vw;  }    /* detrás de la 3.ª tarjeta, es la que se ve borrosa */
+
+@media (max-width: 700px) {
+  .cloud-2,
+  .cloud-4 { display: none; }              /* menos ruido en móvil */
+}

@@ -1,0 +1,100 @@
+/* Paso 1: la caja */
+.footer {
+  background-color: #30346F;
+  padding-block: clamp(32px, 4vw, 56px) clamp(20px, 2.5vw, 32px);
+  color: var(--cream);
+}
+
+/* Paso 2: la fila superior */
+.footer__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer__brand {
+  max-width: 420px;
+}
+.footer__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;                              /* Figma: ~14px × 0.85 */
+}
+
+.footer__logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--navy);
+  display: grid;
+  place-items: center;
+  font-family: var(--font-heading);       /* la "M" del footer es Montserrat, no Bagel */
+  font-weight: 900;
+  font-size: 20px;
+}
+
+.footer__logo-name {
+  font-family: var(--font-heading);
+  font-weight: 900;
+  font-size: clamp(18px, 1.8vw, 24px);
+  color: var(--cream);                    /* sin text-transform: en el Figma es "Marco Pérez" */
+}
+
+.footer__desc {
+  margin: 14px 0 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(242, 232, 207, .9);
+}
+.footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 26px;                      /* vertical | horizontal (el vertical sirve al apilarse en móvil) */
+}
+
+.footer__nav a {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--cream);
+  transition: color .2s;
+}
+
+.footer__nav a:hover,
+.footer__nav a:focus-visible {
+  color: var(--yellow);               /* focus-visible: lo mismo para quien navega con teclado */
+}
+.footer__bottom {
+  position: relative;                 /* ancla de la línea */
+  display: flex;
+  justify-content: space-between;     /* un texto en cada extremo */
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: clamp(28px, 3.2vw, 44px);   /* aire entre la nav y la línea */
+  padding-top: clamp(18px, 2vw, 28px);    /* aire entre la línea y el texto */
+}
+
+.footer__bottom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--gutter);                /* el mismo margen que usa .container */
+  right: var(--gutter);
+  height: 1px;
+  background: var(--navy);
+}
+
+.footer__bottom small {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(242, 232, 207, .85);
+}

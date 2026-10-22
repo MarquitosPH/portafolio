@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portafolio de Marco Pérez, Software Engineer y UX/UI Designer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat:wght@900&family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/img/favicon.svg">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/hero.css">
+    <link rel="stylesheet" href="css/aboutme.css">
+    <link rel="stylesheet" href="css/skills.css">
+    <link rel="stylesheet" href="css/projects.css">
+    <link rel="stylesheet" href="css/certifications.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/dividers.css">
+
+    <title>Marco Pérez | Software Engineer &amp; UX/UI Designer</title>
+</head>
+<body>
+    <header class="site-header">
+        <nav aria-label="Principal">
+            <div class="logo">
+                <a href="#home" class="logo-link">
+                      <span class="logo__icon">M</span>
+                      <span class="logo__name">Marco Perez</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Inicio</a></li>
+                <li><a href="#about">Sobre mi</a></li>
+                <li><a href="#skills">Habilidades</a></li>
+                <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+    <main>
+    <section class="hero" id="home">
+      <div class="container hero__inner">
+        <div class="hero__content">  
+         <h1>Marco Perez</h1>
+        <h2>Software Engineer &amp; UX/UI Designer</h2>
+        <p>Diseño experiencias digitales en Figma y las convierto en codigo rapido y fluido</p>
+        <div class="hero__buttons">
+            <a href="https://github.com/MarquitosPH" target="_blank" rel="noopener noreferrer" class="btn">
+                Github
+                <img src="assets/icons/github.svg" alt="" width="16" height="16">
+            </a>
+            <a href="https://www.instagram.com/marco_phz/" target="_blank" rel="noopener noreferrer" class="btn">
+                Instagram
+                <img src="assets/icons/instagram.svg" alt="" width="16" height="16">
+            </a>
+            <a href="assets/docs/Marco_Perez_Hernandez_CV.pdf" download="Marco_Perez_Hernandez_CV.pdf" class="btn">
+                Descargar CV
+                <img src="assets/icons/avioncito.svg" alt="" width="16" height="16">
+            </a>
+        </div>
+        </div>
+        <img src="assets/stickers/PersonajeSaludando.svg" alt="Marco Pérez saludando" class="hero-image">
+      </div>
+    </section>
+        <section class="about" id="about">
+          <div class="container about__inner">
+          <h2>Sobre mi</h2>
+          <img src="assets/stickers/PersonajeComputadora.svg" alt="Marco Pérez trabajando en la computadora" class="character-image">
+            <div class="about__content">
+              <p id="about-description">Me apasiona crear productos atractivos y sencillos de navegar.</p>
+              <p id="about-details">Me encargo de diseñar la experiencia y las pantallas y después desarrollarlas en código para que funcionen de forma rápida y fluida.</p>
+              <ul class="pills">
+                  <li class="pill">PRODUCTO</li>
+                  <li class="pill">INTERFAZ</li>
+                  <li class="pill">CÓDIGO</li>
+                  <li class="pill">DETALLE</li>
+              </ul>
+            </div>
+          </div>
+            <img src="assets/stickers/CorazonVolando.svg" alt="" class="sticker sticker--corazon">
+            <img src="assets/stickers/EstrellaAmarilla.svg" alt="" class="sticker sticker--estrella">
+            <img src="assets/stickers/EstrellaRedondeada.svg" alt="" class="sticker sticker--estrella-redondeada">
+        </section>
+        <section class="skills" id="skills">
+          <h2>Habilidades</h2>
+          <img src="assets/stickers/DedosCruzados.svg" alt="" class="sticker sticker--dedos-cruzados">
+          <img src="assets/stickers/DedosCruzados.svg" alt="" class="sticker sticker--dedos-cruzados sticker--dedos-izq">
+            <img src="assets/stickers/EstrellasSinFondo.svg" alt="" class="sticker sticker--estrellas-sin-fondo">
+            <div class="parent">
+              <video class="skills__video" autoplay muted loop playsinline aria-hidden="true">
+                <source src="assets/video/personaje.webm" type="video/webm">
+              </video>
+              <div class="ticket-wrapper ticket-herramientas">
+                <div class="tape"></div>
+                <div class="ticket">
+                  <h3>Herramientas</h3>
+                  <div class="items">
+
+                        <div class="item-slot">
+                        <div class="icon-slot">
+                          <img src="assets/icons/github.svg" alt="" width="48" height="48">
+                        </div>
+                        <span>GIT</span>
+                        </div>
+
+                        <div class="item-slot">
+                        <div class="icon-slot">
+                          <img src="assets/icons/figma.svg" alt="" width="48" height="48">
+                        </div>
+                        <span>FIGMA</span>
+                        </div>
+
+                        <div class="item-slot">
+                        <div class="icon-slot">
+                          <img src="assets/icons/aws.svg" alt="" width="48" height="48">
+                        </div>
+                        <span>AMAZON S3</span>
+                        </div>
+                </div>
+                    <div class="dashed"></div>
+                    <div class="total-row"><span>TOTAL</span><span>$0.00</span></div>
+                    <div class="free">100% FREE OF CHARGE</div>
+                    </div>
+              </div>
+              <div class="ticket-wrapper ticket-lenguajes">
+              <div class="tape"></div>
+                <div class="ticket">
+              <h3>Lenguajes</h3>
+                <div class="items">
+
+                      <div class="item-slot">
+                      <div class="icon-slot">
+                        <img src="assets/icons/html.svg" alt="" width="48" height="48">
+                      </div>
+                      <span>HTML</span>
+                      </div>
+
+                      <div class="item-slot">
+                      <div class="icon-slot">
+                        <img src="assets/icons/javascript.svg" alt="" width="48" height="48">
+                      </div>
+                      <span>JAVASCRIPT</span>
+                      </div>
+
+                      <div class="item-slot">
+                      <div class="icon-slot">
+                        <img src="assets/icons/css.svg" alt="" width="48" height="48">
+                      </div>
+                      <span>CSS</span>
+                      </div>
+                </div>
+                  <div class="dashed"></div>
+                  <div class="total-row"><span>TOTAL</span><span>$0.00</span></div>
+                  <div class="free">100% FREE OF CHARGE</div>
+                  </div>
+              </div>
+          </div>
+        </section>
+        <section class="projects" id="projects">
+          <div class="container projects__inner">
+          <h2>Proyectos</h2>
+          <img src="assets/stickers/Naranjaconmanos.svg" alt="" class="sticker sticker--naranja-con-manos">
+          <img src="assets/stickers/PersonajeCafe.svg" alt="" class="sticker sticker--cafe">
+          <div class="projects-grid">
+            <article class="project-card card-main">
+              <img class="card-img" loading="lazy" src="assets/img/proyecto-almacen-quimico.jpg"
+                  alt="Pantalla de inicio del sistema Almacén Químico rediseñado">
+              <div class="card-content">
+                <span class="chip">Branding</span>
+                <h3><a href="#">Rediseño Almacén Químico</a></h3>
+              </div>
+            </article>
+
+            <article class="project-card card-top">
+              <img class="card-img" loading="lazy" src="assets/img/proyecto-recomendador-lentes.jpg"
+                  alt="Pantalla de inicio de la app Recomendador de Lentes">
+              <div class="card-content">
+                <span class="chip">Direccion de Arte</span>
+                <h3><a href="#">App Recomendador de Lentes</a></h3>
+              </div>
+            </article>
+            <article class="project-card card-bottom">
+               <img class="card-img" loading="lazy" src="assets/img/proyecto-rediseno-coppel.jpg"
+                  alt="Pantalla de inicio del rediseño del banco Coppel">
+              <div class="card-content">
+                <span class="chip">Direccion de Arte</span>
+                <h3><a href="#">Rediseño Banco Coppel</a></h3>
+              </div>
+            </article>
+          </div>
+        </div>
+        </section>
+        <section class="certifications" id="certifications">
+          <div class="container certifications__inner">
+          <div class="clouds" aria-hidden="true">
+            <img src="assets/stickers/deco-nube.svg" alt="" class="cloud cloud-1">
+            <img src="assets/stickers/deco-nube.svg" alt="" class="cloud cloud-2">
+            <img src="assets/stickers/deco-nube.svg" alt="" class="cloud cloud-3">
+            <img src="assets/stickers/deco-nube.svg" alt="" class="cloud cloud-4">
+            <img src="assets/stickers/deco-nube.svg" alt="" class="cloud cloud-5">
+          </div>
+
+          <h2>Certificaciones</h2>
+
+          <div class="certs-grid" id="certs">
+            
+            <!-- Destacada -->
+            <article class="cert-card card-top" data-cert="google-ux" data-verify="#">
+              <button type="button" class="cert-open" aria-haspopup="dialog">
+                <img class="cert-img" src="assets/img/cert-google-ux.webp" loading="lazy"
+                    alt="Certificado Google UX Design de Coursera a nombre de Marco Pérez Hernández">
+                <span class="visually-hidden">Ampliar certificado</span>
+              </button>
+              <div class="cert-content">
+                <span class="chip">Branding</span>
+                <h3>Google UX Design 1</h3>
+              </div>
+              <button type="button" class="cert-select">
+                <span class="visually-hidden">Mostrar Google UX Design como destacada</span>
+              </button>
+            </article>
+
+            <!-- Cola -->
+            <article class="cert-card card-2" data-cert="cert-2" data-verify="#">
+              <button type="button" class="cert-open" aria-haspopup="dialog">
+                <img class="cert-img" src="assets/img/cert-google-ux.webp" loading="lazy"
+                    alt="Certificado Google UX Design de Coursera a nombre de Marco Pérez Hernández">
+                <span class="visually-hidden">Ampliar certificado</span>
+              </button>
+              <div class="cert-content">
+                <span class="chip">Branding</span>
+                <h3>Google UX Design 2</h3>
+              </div>
+              <button type="button" class="cert-select">
+                <span class="visually-hidden">Mostrar Google UX Design como destacada</span>
+              </button>
+            </article>
+
+            <article class="cert-card card-3" data-cert="cert-3" data-verify="#">
+              <button type="button" class="cert-open" aria-haspopup="dialog">
+                <img class="cert-img" src="assets/img/cert-google-ux.webp" loading="lazy"
+                    alt="Certificado Google UX Design de Coursera a nombre de Marco Pérez Hernández">
+                <span class="visually-hidden">Ampliar certificado</span>
+              </button>
+              <div class="cert-content">
+                <span class="chip">Branding</span>
+                <h3>Google UX Design 3</h3>
+              </div>
+              <button type="button" class="cert-select">
+                <span class="visually-hidden">Mostrar Google UX Design como destacada</span>
+              </button>
+            </article>
+
+            <article class="cert-card card-bottom" data-cert="cert-4" data-verify="#">
+              <button type="button" class="cert-open" aria-haspopup="dialog">
+                <img class="cert-img" src="assets/img/cert-google-ux.webp" loading="lazy"
+                    alt="Certificado Google UX Design de Coursera a nombre de Marco Pérez Hernández">
+                <span class="visually-hidden">Ampliar certificado</span>
+              </button>
+              <div class="cert-content">
+                <span class="chip">Branding</span>
+                <h3>Google UX Design 4</h3>
+              </div>
+              <button type="button" class="cert-select">
+                <span class="visually-hidden">Mostrar Google UX Design como destacada</span>
+              </button>
+            </article>
+
+          </div>
+          </div>
+          <!-- Aviso para lectores de pantalla al cambiar la destacada -->
+          <p class="visually-hidden" id="certs-status" aria-live="polite"></p>
+
+          <!-- Piso y stickers (decorativos) -->
+          <img src="assets/img/bg-pisos-cuadros.svg" alt="" class="checker-floor">
+          <img src="assets/stickers/florespatineta.svg" alt="" class="deco-flower">
+          <img src="assets/stickers/heladoazul.svg" alt="" class="deco-icecream">
+
+          <!-- Visor del certificado -->
+          <dialog class="cert-modal" id="cert-modal" aria-labelledby="cert-modal-title">
+            <p class="visually-hidden" id="cert-modal-title">Certificado</p>
+            <img class="cert-modal-img" src="assets/img/cert-google-ux.webp" alt="Certificado Google UX Design">
+            <div class="cert-modal-actions">
+              <a class="cert-modal-verify" href="#"
+                target="_blank" rel="noopener noreferrer">Verificar certificado</a>
+              <form method="dialog">
+                <button class="cert-modal-close">Cerrar</button>
+              </form>
+            </div>
+          </dialog>
+        </section>
+        <section class="contacto" id="contact">
+          <video class="contacto__video" autoplay muted loop playsinline aria-hidden="true">
+  
+            <source src="assets/video/contacto2.mp4" type="video/mp4">
+          </video>
+
+          <div class="container contacto__contenido">
+            <h2>¿Trabajamos <span>juntos?</span></h2>
+            <p>Cuéntame tu idea y la volvemos producto: diseño, código y un poquito de tinta azul. Disponible para proyectos freelance y colaboraciones.</p>
+
+            <div class="contacto__acciones">
+              <a class="btn" href="https://www.instagram.com/marco_phz/" target="_blank" rel="noopener noreferrer">
+                <img src="assets/icons/instagram.svg" alt="" width="16" height="16">
+                @marco_phz
+              </a>
+              <a class="btn btn--primary" href="mailto:marco.perez.hernandez@uabc.edu.mx">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="2" y="5" width="20" height="14" rx="2"/>
+                  <path d="m2 7 10 7 10-7"/>
+                </svg>
+                Enviar correo
+              </a>
+            </div>
+          </div>
+        </section>  
+    </main>
+    <footer class="footer">
+        <div class="container footer__top">
+          <div class="footer__brand">
+            <a href="#home" class="footer__logo">
+              <span class="footer__logo-icon">M</span>
+              <span class="footer__logo-name">Marco Pérez</span>
+            </a>
+            <p class="footer__desc">
+              Software Engineer &amp; UX/UI Designer. Diseño y código con energía retro.
+            </p>
+          </div>
+
+          <nav class="footer__nav" aria-label="Pie de página">
+            <a href="#home">Inicio</a>
+            <a href="#about">Sobre mí</a>
+            <a href="#skills">Habilidades</a>
+            <a href="#projects">Proyectos</a>
+            <a href="#contact">Contacto</a>
+          </nav>
+        </div>
+
+        <div class="container footer__bottom">
+          <small>© 2026 Marco Pérez</small>
+          <small>Hecho con mucha tinta y gustito.</small>
+        </div>
+    </footer>
+</body>
+<script src="js/main.js" defer></script>
+</html>

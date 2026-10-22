@@ -1,0 +1,231 @@
+/* =========================================
+   SECCIÓN HABILIDADES
+   ========================================= */
+
+.skills {
+  background-color: #0d0d0d;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+  width: 100%;
+  min-height: auto;
+  position: relative;
+  z-index: 1;
+   padding: clamp(18px, 2.25vw, 30px) 0 clamp(45px, 5.25vw, 75px);     
+  overflow: hidden;           
+}
+
+.skills h2 {
+  position: relative;
+  z-index: 1;                 
+  margin: 0 0 clamp(12px, 1.9vw, 30px);
+  font-family: 'Midnight Galactic', sans-serif;
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: clamp(100px, 11.5vw, 115px);
+  font-weight: 400;
+  color: #FA94A7;
+  text-align: center;
+  text-shadow: 4px 0 0 #F8E7D4;
+  -webkit-text-stroke: 2px var(--navy);
+  paint-order: stroke fill;
+  text-transform: uppercase;
+}
+
+/* ---------- Layout: personaje arriba, tickets abajo ---------- */
+.parent {
+  position: relative;
+  z-index: 1;                 /* por encima de las estrellas */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto auto;     /* cada fila mide lo que ocupa su contenido */
+  gap: clamp(24px, 3vw, 45px) clamp(30px, 4vw, 60px);                   /* 60px entre filas, 80px entre tickets */
+  place-items: center;
+  padding: 0 24px;
+}
+
+.skills__video {
+  grid-column: span 2;
+   width: clamp(112px, 12.75vw, 195px);
+  height: auto;
+  aspect-ratio: 4 / 5;
+}
+
+.ticket-herramientas { grid-row: 2; justify-self: end; rotate:  -13deg;}
+.ticket-lenguajes    { grid-row: 2; justify-self: start; rotate:  +13deg;}
+
+/* ---------- Tickets ---------- */
+.ticket-wrapper {
+ font-size: clamp(8px, .83vw, 13.5px);            /* LA PERILLA: sube o baja y todo el ticket escala */
+  position: relative;
+  transform: rotate(-4deg);
+}
+
+.ticket {
+  --s: 1.1em;                 /* tamaño del zigzag */
+  width: 21em;                /* 420px */
+  padding: 3.15em 2.1em 2.45em;
+  position: relative;
+  filter: drop-shadow(6px 8px 0 rgba(0, 0, 0, 0.4));
+
+  /* textura de papel */
+  background: url('../assets/img/papel.png') center / cover;
+
+  /* bordes en zigzag arriba y abajo */
+  -webkit-mask:
+    conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / var(--s) 50% repeat-x,
+    conic-gradient(from 135deg at top,    #0000, #000 1deg 89deg, #0000 90deg) top    / var(--s) 50% repeat-x;
+  mask:
+    conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / var(--s) 50% repeat-x,
+    conic-gradient(from 135deg at top,    #0000, #000 1deg 89deg, #0000 90deg) top    / var(--s) 50% repeat-x;
+}
+
+.tape {
+  position: absolute;
+  top: -1em;
+  left: -1.4em;
+  width: 7em;
+  height: 2.4em;
+  background: repeating-linear-gradient(
+    90deg,
+    #f0e6d2,
+    #f0e6d2 1em,
+    #e8dcc0 1em,
+    #e8dcc0 1.1em
+  );
+  opacity: 0.85;
+  transform: rotate(-8deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.ticket h3 {
+  margin: 0 0 1.5em;
+  text-align: center;
+  font-family: Georgia, serif;
+  font-size: 1.4em;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.items {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7em;
+  margin-bottom: 1.7em;
+}
+
+.item-slot {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.icon-slot {
+  width: 3.4em;
+  height: 3.4em;
+}
+
+.icon-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        
+}
+
+.item-slot span {
+  font-family: Georgia, serif;
+  font-size: 0.75em;
+  text-align: center;
+}
+
+.dashed {
+  margin: 0.7em 0;
+  border-top: 2px dashed #333;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-family: Georgia, serif;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.free {
+  margin-top: 0.3em;
+  text-align: right;
+  font-family: Georgia, serif;
+  font-size: 0.75em;
+  letter-spacing: 0.5px;
+}
+/* ---------- Stickers animados ---------- */
+.sticker--dedos-cruzados {
+  --w: clamp(52px, 6vw, 98px); 
+  --crop: 0;                 /* cuánto brazo se esconde fuera del borde (0 a .5) */
+  position: absolute;
+  width: var(--w);
+  height: auto;
+  z-index: 0;
+  pointer-events: none;
+  right: calc(var(--w) * var(--crop) * -1);
+  top: 8%;
+  transform-origin: calc((1 - var(--crop)) * 100%) 81%;
+  animation: sway-der 3s ease-in-out infinite;
+}
+/* IZQUIERDA */
+.sticker--dedos-izq {
+  right: auto;
+  top: auto;
+  left: 0;                                   
+  bottom: 10%;
+  transform: translateX(var(--w)) scaleX(-1);
+  transform-origin: 0% 81%;
+  animation: sway-izq 3s ease-in-out infinite;
+}
+/* IZQUIERDA: baja primero con +10deg */
+@keyframes sway-izq {
+  0%, 100% { rotate:  10deg; }
+  50%      { rotate: -10deg; }
+}
+
+/* DERECHA: giro contrario, así baja al mismo tiempo que la izquierda */
+@keyframes sway-der {
+  0%, 100% { rotate: -8deg; }
+  50%      { rotate:  8deg; }
+}
+/* ---------- Estrellas aleatorias (las crea js/main.js) ---------- */
+.star {
+  position: absolute;
+  z-index: 0;
+  pointer-events: none;       /* no estorban los clics */
+  opacity: 0;
+  animation: twinkle 2.4s ease-in-out forwards;
+}
+
+@keyframes twinkle {
+  0%   { opacity: 0; transform: scale(0)   rotate(0deg); }
+  40%  { opacity: 1; transform: scale(1)   rotate(45deg); }
+  100% { opacity: 0; transform: scale(0.3) rotate(90deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .star,
+  .sticker--dedos-cruzados,
+  .sticker--dedos-izq { animation: none; }
+}
+
+@media (max-width: 1000px) {
+  .skills h2 { font-size: 56px; line-height: 70px; }
+
+  .parent { grid-template-columns: 1fr; }
+  .skills__video { grid-column: auto; }
+
+  .ticket-herramientas,
+  .ticket-lenguajes {
+    grid-row: auto;
+    justify-self: center;
+  }
+
+  .ticket-wrapper { font-size: 16px; }
+}

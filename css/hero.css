@@ -1,0 +1,81 @@
+.hero {
+  --shadow-offset: clamp(3px, 0.6vw, 8.7px);
+  position: relative;
+  min-height: max(594px, 100svh);
+  display: flex;                                  /* centra .hero__inner en vertical */
+  align-items: center;
+  padding-block: 30px 75px;                       /* solo vertical: el lateral lo da .container */
+  background: url("../assets/img/hero-atardecer-hd-cambio.webp") center / cover no-repeat;
+  overflow: hidden;
+  --curve-h: clamp(60px, 8vw, 120px);                      /* llena la pantalla */
+  padding-block: 30px calc(var(--curve-h) + 30px); 
+}
+
+.hero__inner {
+  --gap: clamp(32px, 6vw, 100px);                 /* ← separación texto/sticker: ajústala aquí */
+
+  display: grid;
+  grid-template-columns: minmax(0, 560px) auto;   /* texto (máx. 560px) | sticker */
+  justify-content: center;                        /* junta el conjunto y lo centra */
+  align-items: center;
+  column-gap: var(--gap);
+}
+
+/* ---------- Textos ---------- */
+.hero h1,
+.hero h2 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  letter-spacing: 0.012em;
+  color: var(--yellow);
+  -webkit-text-stroke: 1.74px #000;               /* contorno negro de las letras */
+  paint-order: stroke fill;                       /* el contorno queda por fuera */
+  text-shadow: var(--shadow-offset) var(--shadow-offset) 0 #000;
+}
+
+.hero h1 {
+  font-size: clamp(54px, 7.8vw, 112px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hero h2 {
+  max-width: 417px;
+  font-size: clamp(17px, 1.9vw, 27px);
+  line-height: 1.15;
+  text-shadow: 3px 3px 0 #000;
+}
+
+.hero p {
+  max-width: 403px;
+  margin: 21px 0 0;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: clamp(14px, 1.25vw, 18px);
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.hero__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 30px;
+}
+
+/* ---------- Sticker ---------- */
+.hero-image {
+  width: clamp(188px, 18.75vw, 338px);
+  height: auto;
+  filter: drop-shadow(13px 6px 35px #000);
+}
+
+/* ---------- Móvil ---------- */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding: 140px 24px 80px;
+  }
+  .hero-image { order: -1; justify-self: start; }
+}

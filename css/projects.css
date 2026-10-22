@@ -1,0 +1,144 @@
+.projects {
+  background-color: #CFC8B4; 
+  background-image:
+    radial-gradient(circle, rgba(60, 50, 35, .28) 2px, transparent 1.3px);  /* destellos claros */
+  background-size: 76px 76px, 98px 98px, 129px 129px;
+  background-position: 0 0, 41px 67px, 83px 23px;
+
+  padding-block: clamp(36px, 4.5vw, 72px);   /* aire arriba y abajo */
+  overflow: hidden;                          /* mismo motivo que en las otras secciones */
+}
+
+.projects__inner {
+  position: relative;
+  --container: 1020px;      /* ← ancla de los stickers (decisión B) */
+}
+
+.projects h2 {
+  position: relative;
+  z-index: 1;                 
+  margin: 0 0 clamp(9px, 1.4vw, 22px);
+  font-family: 'Midnight Galactic', sans-serif;
+  font-size: clamp(27px, 3.75vw, 54px);
+  line-height: clamp(75px, 8.6vw, 86px);
+  font-weight: 400;
+  color: #E6DE8E;
+  text-align: center;
+  text-shadow: 3px 0 0 #020202;
+  -webkit-text-stroke: 1.5px var(--navy);
+  paint-order: stroke fill;
+  text-transform: uppercase;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    gap: clamp(9px, 1.35vw, 18px);
+}
+
+.projects-grid .card-main{
+    grid-row: span 2 / span 2;
+}
+.projects-grid .card-top,
+.projects-grid .card-bottom {
+  aspect-ratio: 16 / 10;
+}
+.project-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    border: 3px solid var(--navy);
+    box-shadow: 6px 6px 0 var(--navy);      /* blur en 0 = sombra "dura" */
+    background: var(--navy);
+}
+.project-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10, 12, 40, .85) 0%, transparent 55%);
+  pointer-events: none;                   /* no bloquea los clics */
+}
+.card-content {
+  position: absolute;
+  inset: auto 0 0 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: clamp(7px, 1.1vw, 16px);
+  gap: 6px;
+}
+.card-img{
+    display: block;
+    width: 100%;
+     height: 100%; 
+    object-fit: cover;
+}
+.chip{
+  padding: 3px 9px;
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-weight: 700;
+    font-size: 9.6px;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--cream);
+    border: 1px solid var(--navy);
+}
+.card-content h3{
+    margin: 0;
+    font-family: "Bagel Fat One";
+    font-weight: 400;
+    font-size: clamp(14px, 1.9vw, 24px);
+    line-height: 1.05;
+    color: var(--cream);
+}
+.sticker--naranja-con-manos,
+.sticker--cafe {
+  position: absolute;
+  z-index: 2;                    /* ← por encima de las tarjetas (ver nota) */
+  height: auto;
+  pointer-events: none;          /* no estorban los clics en las tarjetas */
+}
+.sticker--naranja-con-manos {
+  width: clamp(68px, 8.25vw, 128px);
+  top: 6%;
+  right: -1%;                    /* negativo: sobresale del contenedor */
+}
+
+.sticker--cafe {
+   width: clamp(73px, 9vw, 141px);
+  bottom: -4%;                   /* sobresale por abajo */
+  right: -3%;                     /* negativo: sobresale del contenedor */
+  filter: drop-shadow(-8px 6px 10px rgba(0, 0, 0, .3));
+}
+
+@media (hover: hover) {               /* solo en dispositivos con mouse */
+  .project-card {
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+
+  .project-card:hover {
+    transform: translate(3px, 3px);
+    box-shadow: 3px 3px 0 var(--navy);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card { transition: none; }
+}
+
+@media (max-width: 700px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+  }
+
+  .projects-grid .card-main {
+    grid-row: auto;
+    aspect-ratio: 16 / 10;
+  }
+
+  .sticker--cafe { width: clamp(110px, 28vw, 160px); }
+}
