@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caso de estudio: investigación de usuario con 60 encuestados y propuesta conceptual de rediseño de una app de banca móvil. Por Marco Pérez.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat:wght@900&family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+
+    <title>Rediseño BanCoppel | Marco Pérez</title>
+</head>
+<body class="cs-page cs-page--bancoppel">
+    <header class="site-header">
+        <nav aria-label="Principal">
+            <div class="logo">
+                <a href="../index.html#home" class="logo-link">
+                    <span class="logo__icon">M</span>
+                    <span class="logo__name">Marco Perez</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Inicio</a></li>
+                <li><a href="../index.html#about">Sobre mi</a></li>
+                <li><a href="../index.html#skills">Habilidades</a></li>
+                <li><a href="../index.html#projects">Proyectos</a></li>
+                <li><a href="../index.html#contact">Contacto</a></li>
+            </ul>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Portada -->
+        <section class="cs-hero cs-hero--text">
+            <div class="container cs-hero__inner">
+                <a class="cs-back" href="../index.html#projects">← Volver a proyectos</a>
+
+                <p class="cs-eyebrow">Caso de estudio · Investigación de usuario</p>
+                <h1 class="cs-hero__title">Rediseño BanCoppel</h1>
+                <p class="cs-hero__lead">
+                    Antes de mover un solo botón, le pregunté a 60 personas cómo usan la app de su banco.
+                    Sus respuestas decidieron qué rediseñar y qué dejar igual.
+                </p>
+
+                <dl class="cs-meta">
+                    <div>
+                        <dt>Rol</dt>
+                        <dd>Investigación de usuario y diseño UX/UI</dd>
+                    </div>
+                    <div>
+                        <dt>Contexto</dt>
+                        <dd>Proyecto académico · Ingeniería de Procesos, UABC · 2025</dd>
+                    </div>
+                    <div>
+                        <dt>Muestra</dt>
+                        <dd>60 personas encuestadas</dd>
+                    </div>
+                    <div>
+                        <dt>Herramientas</dt>
+                        <dd>Google Forms · Figma · HTML/CSS · MySQL</dd>
+                    </div>
+                </dl>
+
+                <p class="cs-disclaimer">
+                    Rediseño conceptual con fines académicos. No tiene relación con BanCoppel ni fue encargado por la empresa.
+                </p>
+            </div>
+        </section>
+
+        <!-- 01 Punto de partida -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">01</span>
+                    <h2>El punto de partida</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Elegí la app de BanCoppel porque es una herramienta de uso diario para jóvenes y adultos.
+                        Cumple con lo básico, pero vi oportunidades en tres frentes: claridad visual,
+                        organización de los procesos y percepción de seguridad.
+                    </p>
+                    <p>
+                        El riesgo era rediseñar según mi gusto. Por eso el proyecto empezó con una pregunta, no con una pantalla:
+                    </p>
+                    <blockquote class="cs-quote">
+                        ¿Qué les estorba de verdad a las personas cuando usan la app de su banco?
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 Investigación -->
+        <section class="cs-section cs-section--alt">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">02</span>
+                    <h2>Cómo investigué</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Diseñé una encuesta de experiencia en banca móvil en Google Forms y la difundí en
+                        Instagram, Facebook y TikTok. Conseguir respuestas fue el mayor reto: llegué a
+                        <strong>60 personas</strong>, el doble del mínimo de 30 que me había fijado para poder analizar los datos.
+                    </p>
+
+                    <h3>Quién respondió</h3>
+                    <div class="cs-stats cs-stats--three">
+                        <div class="cs-stat">
+                            <span class="cs-stat__value">76.7%</span>
+                            <span class="cs-stat__label">Tiene entre 18 y 29 años</span>
+                        </div>
+                        <div class="cs-stat">
+                            <span class="cs-stat__value">48.3%</span>
+                            <span class="cs-stat__label">Estudia · 35% es empleado</span>
+                        </div>
+                        <div class="cs-stat cs-stat--accent">
+                            <span class="cs-stat__value">90%</span>
+                            <span class="cs-stat__label">Usa la app a diario o cada semana</span>
+                        </div>
+                    </div>
+                    <p class="cs-next-steps">
+                        Es un público joven y de uso frecuente: no necesita que le expliquen la app, necesita que no le estorbe.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 Resultados -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">03</span>
+                    <h2>Lo que encontré</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        El dato más interesante fue una contradicción. Casi todos dicen que la app es fácil,
+                        y aun así casi todos reportan problemas al usarla.
+                    </p>
+                    <div class="cs-stats">
+                        <div class="cs-stat">
+                            <span class="cs-stat__value">96.6%</span>
+                            <span class="cs-stat__label">La considera fácil o muy fácil de usar</span>
+                        </div>
+                        <div class="cs-stat cs-stat--accent">
+                            <span class="cs-stat__value">80%</span>
+                            <span class="cs-stat__label">Ha tenido problemas de lentitud</span>
+                        </div>
+                    </div>
+                    <p>
+                        "Fácil" no significa "sin fricción". La gente ya aprendió a usar la app; lo que pide es
+                        que sea más rápida y más clara.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container cs-charts">
+                <figure class="cs-chart">
+                    <figcaption>
+                        <h3>¿Qué problemas has enfrentado?</h3>
+                        <span>55 respuestas · opción múltiple</span>
+                    </figcaption>
+                    <ul>
+                        <li style="--v: 80%"><span>Lentitud</span><i></i><b>80%</b></li>
+                        <li style="--v: 29.1%"><span>Confusión en los procesos</span><i></i><b>29.1%</b></li>
+                        <li style="--v: 5.5%"><span>Fraudes</span><i></i><b>5.5%</b></li>
+                        <li style="--v: 3.6%"><span>Ninguno</span><i></i><b>3.6%</b></li>
+                    </ul>
+                </figure>
+
+                <figure class="cs-chart">
+                    <figcaption>
+                        <h3>¿Qué servicios usas más?</h3>
+                        <span>60 respuestas · opción múltiple</span>
+                    </figcaption>
+                    <ul>
+                        <li style="--v: 86.7%"><span>Transferencias</span><i></i><b>86.7%</b></li>
+                        <li style="--v: 60%"><span>Consultar saldo</span><i></i><b>60%</b></li>
+                        <li style="--v: 31.7%"><span>Pago de servicios</span><i></i><b>31.7%</b></li>
+                        <li style="--v: 6.7%"><span>Inversiones</span><i></i><b>6.7%</b></li>
+                    </ul>
+                </figure>
+
+                <figure class="cs-chart">
+                    <figcaption>
+                        <h3>¿Qué método de seguridad prefieres?</h3>
+                        <span>60 respuestas</span>
+                    </figcaption>
+                    <ul>
+                        <li style="--v: 40%"><span>Huella digital</span><i></i><b>40%</b></li>
+                        <li style="--v: 33.3%"><span>Reconocimiento facial</span><i></i><b>33.3%</b></li>
+                        <li style="--v: 21.7%"><span>Contraseña</span><i></i><b>21.7%</b></li>
+                        <li style="--v: 5%"><span>Token</span><i></i><b>5%</b></li>
+                    </ul>
+                </figure>
+
+                <figure class="cs-chart">
+                    <figcaption>
+                        <h3>¿Dónde usas la app?</h3>
+                        <span>60 respuestas · opción múltiple</span>
+                    </figcaption>
+                    <ul>
+                        <li style="--v: 81.7%"><span>Casa</span><i></i><b>81.7%</b></li>
+                        <li style="--v: 40%"><span>Trabajo</span><i></i><b>40%</b></li>
+                        <li style="--v: 6.7%"><span>Transporte</span><i></i><b>6.7%</b></li>
+                        <li style="--v: 5%"><span>Escuela</span><i></i><b>5%</b></li>
+                    </ul>
+                </figure>
+            </div>
+
+            <div class="container cs-grid cs-grid--after">
+                <header class="cs-section__head">
+                    <h3 class="cs-subhead">En sus palabras</h3>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Además, <strong>casi 1 de cada 4 personas (23.7%)</strong> ha necesitado ayuda de alguien más para usar la app.
+                        Al preguntar qué mejorarían, las respuestas apuntaron al mismo lugar:
+                    </p>
+                    <ul class="cs-voices">
+                        <li>Que no esté tan conglomerado los menús.</li>
+                        <li>Modo fácil, donde los botones principales estén súper a la mano.</li>
+                        <li>La claridad de la información.</li>
+                        <li>Que se realizaran los procesos de forma más visual y rápida.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 Decisiones -->
+        <section class="cs-section cs-section--dark">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">04</span>
+                    <h2>Del dato a la decisión</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>Cada decisión del rediseño sale de un hallazgo de la encuesta.</p>
+                </div>
+            </div>
+
+            <div class="container cs-decisions">
+                <article>
+                    <p class="cs-decisions__data"><b>86.7%</b> usa sobre todo transferencias</p>
+                    <p>Transferir en una sola pantalla: saldo a la vista, contactos guardados y opción de escanear la tarjeta.</p>
+                </article>
+                <article>
+                    <p class="cs-decisions__data"><b>60%</b> entra a consultar su saldo</p>
+                    <p>El saldo y la tarjeta son lo primero que se ve al abrir la app, sin tocar nada.</p>
+                </article>
+                <article>
+                    <p class="cs-decisions__data"><b>29.1%</b> se confunde en los procesos</p>
+                    <p>Una sección de "Acciones frecuentes" con pocos botones grandes, en lugar de menús cargados.</p>
+                </article>
+                <article>
+                    <p class="cs-decisions__data"><b>80%</b> sufre lentitud</p>
+                    <p>El diseño no acelera un servidor, pero sí quita pasos: menos pantallas entre abrir la app y terminar la tarea.</p>
+                </article>
+                <article>
+                    <p class="cs-decisions__data"><b>73.3%</b> prefiere huella o rostro</p>
+                    <p>Recomendación para la siguiente iteración: acceso biométrico como opción principal, antes que la contraseña.</p>
+                </article>
+            </div>
+        </section>
+
+        <!-- 05 Prototipo -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">05</span>
+                    <h2>De papel a prototipo</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Con las decisiones claras, bocé las pantallas a mano para probar la estructura rápido,
+                        las pasé a wireframes en Figma y al final construí una versión web con HTML, CSS y una base de datos MySQL
+                        para simular saldos y transferencias.
+                    </p>
+                    <ol class="cs-flow" aria-label="Etapas del prototipo">
+                        <li>Bocetos en papel</li>
+                        <li>Wireframes en Figma</li>
+                        <li>Prototipo web</li>
+                    </ol>
+                </div>
+            </div>
+
+            <figure class="container cs-figure">
+                <img loading="lazy" src="../assets/img/bancoppel/bocetos.webp" width="1400" height="1050"
+                     alt="Bocetos a mano de cinco pantallas: bienvenida, inicio con saldo y acciones frecuentes, acciones disponibles, transferencia y notificaciones">
+                <figcaption>Bocetos en papel: inicio con saldo, acciones frecuentes, transferencia y notificaciones.</figcaption>
+            </figure>
+
+            <figure class="container cs-figure">
+                <img loading="lazy" src="../assets/img/bancoppel/wireframes.webp" width="1904" height="962"
+                     alt="Wireframes de cuatro pantallas: inicio con tarjeta y acciones frecuentes, menú, notificaciones y transferencia con opción de escanear tarjeta">
+                <figcaption>Wireframes en Figma: en el inicio, la tarjeta y cuatro acciones frecuentes; la transferencia cabe en una sola pantalla.</figcaption>
+            </figure>
+
+            <div class="container cs-shots">
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/bancoppel/web-inicio.webp" width="1048" height="750" alt="Prototipo web: inicio con saludo, tarjetas, saldos y acciones rápidas">
+                    </div>
+                    <figcaption><strong>Inicio web.</strong> Saludo, saldos visibles y acciones rápidas debajo.</figcaption>
+                </figure>
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/bancoppel/web-transferir.webp" width="1056" height="749" alt="Prototipo web: transferencia con la tarjeta y el saldo a la izquierda y el formulario a la derecha">
+                    </div>
+                    <figcaption><strong>Transferir.</strong> La tarjeta y el saldo siguen a la vista mientras llenas el formulario.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 06 Aprendizajes -->
+        <section class="cs-section cs-section--alt">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">06</span>
+                    <h2>Lo que aprendí</h2>
+                </header>
+                <div class="cs-section__body">
+                    <div class="cs-learn">
+                        <article>
+                            <h3>Los datos corrigen la intuición</h3>
+                            <p>Yo habría empezado por lo visual. La encuesta mostró que el dolor principal era la lentitud y los procesos confusos.</p>
+                        </article>
+                        <article>
+                            <h3>"Fácil" no es suficiente</h3>
+                            <p>Una app puede sentirse fácil y aun así frustrar. Preguntar por problemas concretos reveló lo que una sola calificación escondía.</p>
+                        </article>
+                        <article>
+                            <h3>Conseguir respuestas también es diseño</h3>
+                            <p>Nadie contesta una encuesta porque sí. Tuve que difundirla en redes y entre conocidos para llegar a 60 personas.</p>
+                        </article>
+                    </div>
+                    <p class="cs-next-steps">
+                        <strong>Siguiente paso:</strong> probar el prototipo con usuarios para medir si las tareas principales
+                        de verdad se completan en menos pasos, y ampliar la muestra a personas mayores de 45 años, que aquí fueron pocas.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cierre -->
+        <section class="cs-end">
+            <div class="container cs-end__inner">
+                <img class="cs-end__sticker" src="../assets/stickers/PersonajeComputadora.svg" alt="" width="180" height="180">
+                <h2>¿Quieres ver más?</h2>
+                <div class="cs-end__buttons">
+                    <a href="../index.html#projects" class="btn btn--primary">← Volver a proyectos</a>
+                    <a href="almacen-quimico.html" class="btn">Ver Almacén Químico →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__top">
+            <div class="footer__brand">
+                <a href="../index.html#home" class="footer__logo">
+                    <span class="footer__logo-icon">M</span>
+                    <span class="footer__logo-name">Marco Pérez</span>
+                </a>
+                <p class="footer__desc">
+                    Software Engineer &amp; UX/UI Designer. Diseño y código con energía retro.
+                </p>
+            </div>
+
+            <nav class="footer__nav" aria-label="Pie de página">
+                <a href="../index.html#home">Inicio</a>
+                <a href="../index.html#about">Sobre mí</a>
+                <a href="../index.html#skills">Habilidades</a>
+                <a href="../index.html#projects">Proyectos</a>
+                <a href="../index.html#contact">Contacto</a>
+            </nav>
+        </div>
+
+        <div class="container footer__bottom">
+            <small>© 2026 Marco Pérez</small>
+            <small>Hecho con mucha tinta y gustito.</small>
+        </div>
+    </footer>
+</body>
+</html>

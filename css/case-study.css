@@ -680,3 +680,181 @@
 @media (prefers-reduced-motion: reduce) {
   .cs-gallery { scroll-behavior: auto; }
 }
+
+/* ---------- Tema: BanCoppel ---------- */
+.cs-page--bancoppel {
+  --cs-ink: #14246B;            /* azul profundo */
+  --cs-accent: #2F4BD8;
+}
+
+.cs-page--bancoppel .cs-section--dark { background: #1B2F8A; }
+
+.cs-page--bancoppel .cs-hero__title { text-shadow: 5px 0 0 #F5C400; }
+
+/* Portada sin captura */
+.cs-hero--text { padding-bottom: clamp(48px, 7vw, 88px); }
+
+.cs-disclaimer {
+  max-width: 640px;
+  margin: 0;
+  padding: 12px 16px;
+  border: 1px dashed rgba(242, 232, 207, .45);
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(242, 232, 207, .85);
+}
+
+/* Tres métricas en fila */
+.cs-stats--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.cs-stats--three .cs-stat__value { font-size: clamp(32px, 3.6vw, 44px); }
+
+/* Gráficas de barras */
+.cs-charts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin-top: 48px;
+}
+
+.cs-chart {
+  margin: 0;
+  padding: 24px;
+  border: 2px solid var(--cs-ink);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 6px 6px 0 var(--cs-ink);
+}
+
+.cs-chart h3 {
+  margin: 0;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 20px;
+}
+
+.cs-chart figcaption span {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--cs-muted);
+}
+
+.cs-chart ul {
+  display: grid;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.cs-chart li {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 6px 12px;
+  align-items: baseline;
+  font-size: 15px;
+}
+
+.cs-chart li i {                 /* barra */
+  grid-column: 1 / -1;
+  grid-row: 2;
+  height: 12px;
+  border-radius: 999px;
+  background:
+    linear-gradient(var(--cs-accent), var(--cs-accent)) left / var(--v) 100% no-repeat,
+    var(--cs-paper-2);
+}
+
+.cs-chart li b {
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.cs-chart li:first-child i {
+  background:
+    linear-gradient(var(--cs-ink), var(--cs-ink)) left / var(--v) 100% no-repeat,
+    var(--cs-paper-2);
+}
+
+/* Bloque de texto después de las gráficas */
+.cs-grid--after { margin-top: clamp(48px, 6vw, 72px); }
+
+.cs-subhead {
+  margin: 0;
+  font-family: 'Clash Display', sans-serif;
+  font-size: 24px;
+}
+
+/* Respuestas abiertas */
+.cs-voices {
+  display: grid;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.cs-voices li {
+  padding: 14px 18px;
+  border-left: 5px solid var(--cs-accent);
+  border-radius: 0 12px 12px 0;
+  background: #fff;
+  font-style: italic;
+}
+
+.cs-voices li::before { content: "“"; }
+.cs-voices li::after  { content: "”"; }
+
+/* Hallazgo → decisión */
+.cs-decisions {
+  display: grid;
+  gap: 12px;
+  max-width: 1000px;
+  margin-top: 40px;
+}
+
+.cs-decisions article {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  align-items: center;
+  gap: 12px 32px;
+  padding: 20px 24px;
+  border: 1px solid rgba(242, 232, 207, .3);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, .06);
+}
+
+.cs-decisions p { margin: 0; line-height: 1.5; }
+
+.cs-decisions__data b {
+  display: block;
+  font-family: 'Bagel Fat One', sans-serif;
+  font-weight: 400;
+  font-size: clamp(32px, 4vw, 44px);
+  line-height: 1;
+  color: var(--yellow);
+}
+
+/* Imagen ancha */
+.cs-figure {
+  max-width: 900px;
+  margin-top: 48px;
+}
+
+.cs-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 3px solid var(--cs-ink);
+  border-radius: 14px;
+  box-shadow: 8px 10px 0 var(--cs-ink);
+}
+
+.cs-figure figcaption {
+  margin-top: 16px;
+  line-height: 1.5;
+}
+
+@media (max-width: 800px) {
+  .cs-charts { grid-template-columns: 1fr; }
+  .cs-stats--three { grid-template-columns: 1fr; }
+  .cs-decisions article { grid-template-columns: 1fr; }
+}
