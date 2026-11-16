@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caso de estudio del rediseño UX/UI del sistema de préstamos del Almacén de Química de la FCQI, UABC. Diseño por Marco Pérez.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat:wght@900&family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+    <script src="../js/case-study.js" defer></script>
+
+    <title>Rediseño Almacén Químico | Marco Pérez</title>
+</head>
+<body class="cs-page cs-page--almacen">
+    <header class="site-header">
+        <nav aria-label="Principal">
+            <div class="logo">
+                <a href="../index.html#home" class="logo-link">
+                    <span class="logo__icon">M</span>
+                    <span class="logo__name">Marco Perez</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Inicio</a></li>
+                <li><a href="../index.html#about">Sobre mi</a></li>
+                <li><a href="../index.html#skills">Habilidades</a></li>
+                <li><a href="../index.html#projects">Proyectos</a></li>
+                <li><a href="../index.html#contact">Contacto</a></li>
+            </ul>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Portada -->
+        <section class="cs-hero">
+            <div class="container cs-hero__inner">
+                <a class="cs-back" href="../index.html#projects">← Volver a proyectos</a>
+
+                <p class="cs-eyebrow">Caso de estudio · Rediseño UX/UI</p>
+                <h1 class="cs-hero__title">Almacén Químico</h1>
+                <p class="cs-hero__lead">
+                    Rediseño del sistema con el que alumnos y almacenistas de la FCQI piden, entregan
+                    y reciben material de laboratorio. El sistema funcionaba, pero nadie sabía bien qué hacer en él.
+                </p>
+
+                <dl class="cs-meta">
+                    <div>
+                        <dt>Rol</dt>
+                        <dd>Diseño UX/UI de todas las vistas · apoyo en CSS</dd>
+                    </div>
+                    <div>
+                        <dt>Contexto</dt>
+                        <dd>Servicio profesional para el Almacén de Química, FCQI · UABC</dd>
+                    </div>
+                    <div>
+                        <dt>Usuarios</dt>
+                        <dd>Alumnos · almacenistas · administrador</dd>
+                    </div>
+                    <div>
+                        <dt>Herramientas</dt>
+                        <dd>Figma · Design System · Django + Bootstrap</dd>
+                    </div>
+                </dl>
+            </div>
+
+            <figure class="container cs-hero__shot">
+                <div class="cs-browser">
+                    <span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <img src="../assets/img/almacen/nuevo-dashboard.webp" width="1366" height="1242"
+                         alt="Nuevo inicio del almacenista con métricas de préstamos, entregas pendientes y devoluciones del día">
+                </div>
+            </figure>
+        </section>
+
+        <!-- 01 Problema -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">01</span>
+                    <h2>El problema</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        El sistema ya estaba programado y hacía su trabajo, pero se veía y se sentía como
+                        un borrador: vistas grises, listas planas y acciones importantes escondidas entre otras.
+                    </p>
+                    <ul class="cs-list">
+                        <li>El menú lateral solo tenía <strong>íconos sin texto</strong>.</li>
+                        <li>"Entregar" y "Rechazar" tenían <strong>el mismo peso visual</strong>, aunque una es irreversible.</li>
+                        <li>El almacenista veía <strong>matrículas en vez de nombres</strong> y ningún resumen del día.</li>
+                        <li>El inventario solo se actualizaba <strong>en Excel al final del semestre</strong>.</li>
+                    </ul>
+                    <blockquote class="cs-quote">
+                        ¿Cómo hacer que pedir y entregar material sea claro para el alumno y rápido para quien atiende el almacén?
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 Proceso -->
+        <section class="cs-section cs-section--alt">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">02</span>
+                    <h2>Cómo lo abordé</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Antes de dibujar una sola pantalla, recorrí el sistema completo y lo documenté.
+                    </p>
+                    <ol class="cs-steps">
+                        <li>
+                            <h3>Auditoría de vistas</h3>
+                            <p>Mapeé cada pantalla, botón y a dónde lleva, para los tres roles. Así encontré 16 vistas con problemas y las prioricé.</p>
+                        </li>
+                        <li>
+                            <h3>Visita al almacén</h3>
+                            <p>Entrevisté a la encargada del almacén. De ahí salieron necesidades que el sistema ni contemplaba, como un inicio con el resumen del día.</p>
+                        </li>
+                        <li>
+                            <h3>Referentes</h3>
+                            <p>Analicé dashboards de inventario para entender cómo otros resuelven listas densas y estados.</p>
+                        </li>
+                        <li>
+                            <h3>Design System → Figma</h3>
+                            <p>Definí colores, botones y badges primero, y después diseñé todas las vistas de alumno, almacenista y administrador.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 Design System -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">03</span>
+                    <h2>Design System</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Usé la identidad de la UABC con una regla <strong>60 / 30 / 10</strong>: base neutra cálida,
+                        verde institucional para acciones positivas y arena dorada para la acción principal.
+                        Cada estado de una solicitud tiene su color y su ícono, para que se reconozca de un vistazo.
+                    </p>
+                    <div class="cs-palette" aria-label="Proporción de color 60 30 10">
+                        <span style="--w: 60%; --c: #FAF7F2; --t: #4A4A5E;">60% neutro</span>
+                        <span style="--w: 30%; --c: #3B713F; --t: #FAF9F6;">30% verde</span>
+                        <span style="--w: 10%; --c: #A07C1E; --t: #FAF9F6;">10%</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container cs-ds">
+                <img loading="lazy" src="../assets/img/almacen/ds-2.webp" width="890" height="1409" alt="Paleta de colores del sistema: fondos, verde UABC, arena dorada y colores semánticos">
+                <img loading="lazy" src="../assets/img/almacen/ds-5.webp" width="890" height="1525" alt="Botones en forma de píldora con variantes primario, secundario, destructivo y sus estados">
+                <img loading="lazy" src="../assets/img/almacen/ds-6.webp" width="900" height="1488" alt="Badges de estado Entregado, Pendiente, Devuelto, Cancelado, Rechazado y Adeudo, y campos de texto">
+            </div>
+        </section>
+
+        <!-- 04 Antes y después -->
+        <section class="cs-section cs-section--dark">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">04</span>
+                    <h2>Antes y después</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>Arrastra la línea para comparar el sistema original con el rediseño.</p>
+                </div>
+            </div>
+
+            <div class="container cs-compares">
+                <figure class="cs-compare">
+                    <div class="cs-compare__frame" style="--pos: 50%">
+                        <img src="../assets/img/almacen/despues-login.webp" width="1366" height="768" alt="Después: inicio de sesión con identidad del almacén e ilustración" loading="lazy">
+                        <img class="cs-compare__before" src="../assets/img/almacen/antes-login.webp" width="1366" height="768" alt="Antes: inicio de sesión genérico sobre foto del campus" loading="lazy">
+                        <span class="cs-compare__tag cs-compare__tag--before" aria-hidden="true">Antes</span>
+                        <span class="cs-compare__tag cs-compare__tag--after" aria-hidden="true">Después</span>
+                        <input class="cs-compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después del inicio de sesión">
+                    </div>
+                    <figcaption><strong>Inicio de sesión.</strong> Le di identidad propia al almacén y quité la foto que solo distraía.</figcaption>
+                </figure>
+
+                <figure class="cs-compare">
+                    <div class="cs-compare__frame" style="--pos: 50%">
+                        <img src="../assets/img/almacen/despues-inicio.webp" width="1366" height="768" alt="Después: inicio del alumno con préstamos activos y próximas recolecciones" loading="lazy">
+                        <img class="cs-compare__before" src="../assets/img/almacen/antes-inicio.webp" width="1366" height="768" alt="Antes: lista gris de solicitudes activas" loading="lazy">
+                        <span class="cs-compare__tag cs-compare__tag--before" aria-hidden="true">Antes</span>
+                        <span class="cs-compare__tag cs-compare__tag--after" aria-hidden="true">Después</span>
+                        <input class="cs-compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después del inicio del alumno">
+                    </div>
+                    <figcaption><strong>Inicio del alumno.</strong> Menú con etiquetas, saludo y préstamos separados por estado.</figcaption>
+                </figure>
+
+                <figure class="cs-compare">
+                    <div class="cs-compare__frame" style="--pos: 50%">
+                        <img src="../assets/img/almacen/despues-catalogo.webp" width="1366" height="768" alt="Después: catálogo con filtros por categoría y disponibilidad de cada artículo" loading="lazy">
+                        <img class="cs-compare__before" src="../assets/img/almacen/antes-catalogo.webp" width="1366" height="768" alt="Antes: catálogo con imágenes de relleno y nombres cortados" loading="lazy">
+                        <span class="cs-compare__tag cs-compare__tag--before" aria-hidden="true">Antes</span>
+                        <span class="cs-compare__tag cs-compare__tag--after" aria-hidden="true">Después</span>
+                        <input class="cs-compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después del catálogo">
+                    </div>
+                    <figcaption><strong>Catálogo.</strong> Filtros por categoría y disponibilidad visible antes de agregar.</figcaption>
+                </figure>
+
+                <figure class="cs-compare">
+                    <div class="cs-compare__frame" style="--pos: 50%">
+                        <img src="../assets/img/almacen/despues-solicitud.webp" width="1366" height="768" alt="Después: detalle de solicitud con aviso de tiempo y botones con jerarquía" loading="lazy">
+                        <img class="cs-compare__before" src="../assets/img/almacen/antes-solicitud.webp" width="1366" height="768" alt="Antes: detalle de solicitud como lista plana" loading="lazy">
+                        <span class="cs-compare__tag cs-compare__tag--before" aria-hidden="true">Antes</span>
+                        <span class="cs-compare__tag cs-compare__tag--after" aria-hidden="true">Después</span>
+                        <input class="cs-compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después del detalle de solicitud">
+                    </div>
+                    <figcaption><strong>Detalle de solicitud.</strong> Acción principal destacada y aviso de cuánto tiempo queda para recoger.</figcaption>
+                </figure>
+
+                <figure class="cs-compare">
+                    <div class="cs-compare__frame" style="--pos: 50%">
+                        <img src="../assets/img/almacen/despues-recibir.webp" width="1366" height="768" alt="Después: recibir material marcando cada artículo como completo, dañado, perdido o incompleto" loading="lazy">
+                        <img class="cs-compare__before" src="../assets/img/almacen/antes-recibir.webp" width="1366" height="768" alt="Antes: recibir material con un campo de penalización y una casilla por unidad" loading="lazy">
+                        <span class="cs-compare__tag cs-compare__tag--before" aria-hidden="true">Antes</span>
+                        <span class="cs-compare__tag cs-compare__tag--after" aria-hidden="true">Después</span>
+                        <input class="cs-compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después de recibir material">
+                    </div>
+                    <figcaption><strong>Recibir material.</strong> Antes solo existía "devuelto o no". Ahora cada artículo se marca como completo, dañado, perdido o incompleto.</figcaption>
+                </figure>
+
+                <figure class="cs-compare">
+                    <div class="cs-compare__frame" style="--pos: 50%">
+                        <img src="../assets/img/almacen/despues-adeudo.webp" width="1366" height="768" alt="Después: detalle de adeudo con datos generales y acciones para reemplazar o pagar" loading="lazy">
+                        <img class="cs-compare__before" src="../assets/img/almacen/antes-adeudo.webp" width="1366" height="768" alt="Antes: detalle de adeudo en una lista simple" loading="lazy">
+                        <span class="cs-compare__tag cs-compare__tag--before" aria-hidden="true">Antes</span>
+                        <span class="cs-compare__tag cs-compare__tag--after" aria-hidden="true">Después</span>
+                        <input class="cs-compare__range" type="range" min="0" max="100" value="50" aria-label="Comparar antes y después del detalle de adeudo">
+                    </div>
+                    <figcaption><strong>Adeudos.</strong> Quién, cuánto y por qué en un solo lugar, con la opción de pagar o reemplazar.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 05 Vistas nuevas -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">05</span>
+                    <h2>Lo que no existía</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        La visita al almacén reveló necesidades que el sistema no cubría. Diseñé vistas nuevas para ellas:
+                    </p>
+                    <ul class="cs-list">
+                        <li><strong>Inicio del almacenista</strong> con el resumen del día: solicitudes pendientes, entregas, devoluciones vencidas y adeudos.</li>
+                        <li><strong>Reportes</strong> filtrables por estado y fecha, exportables a PDF, XLS o HTML.</li>
+                        <li><strong>Escáner QR</strong> con búsqueda manual y los escaneos recientes a la vista.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="container cs-shots">
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/almacen/nuevo-reportes.webp" width="1366" height="768" alt="Vista de reportes con filtros de estado, formato y rango de fechas">
+                    </div>
+                    <figcaption><strong>Reportes.</strong> Antes era un modal; ahora es una vista con filtros e historial.</figcaption>
+                </figure>
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/almacen/nuevo-escaner.webp" width="1366" height="768" alt="Escáner QR con marco de cámara, búsqueda manual y escaneos recientes">
+                    </div>
+                    <figcaption><strong>Escáner QR.</strong> Marco guía para la cámara y plan B si el código no se lee.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 06 Flujo -->
+        <section class="cs-section cs-section--alt">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">06</span>
+                    <h2>Pedir material, paso a paso</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        El flujo más usado por los alumnos. Lo dividí en pasos cortos, con confirmación al final
+                        para que nadie se quede con la duda de si su solicitud se envió.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cs-gallery cs-gallery--wide" tabindex="0" aria-label="Flujo para pedir material, desplázate horizontalmente">
+                <figure><img loading="lazy" src="../assets/img/almacen/flujo-1.webp" alt="Paso 1: detalle del artículo con cantidad y botón Agregar"><figcaption>1 · Elegir artículo</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/almacen/flujo-2.webp" alt="Paso 2: revisar los materiales agregados"><figcaption>2 · Revisar</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/almacen/flujo-3.webp" alt="Paso 3: elegir fechas y horas de entrega y devolución"><figcaption>3 · Fechas</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/almacen/flujo-4.webp" alt="Paso 4: confirmación de solicitud enviada"><figcaption>4 · Confirmación</figcaption></figure>
+            </div>
+        </section>
+
+        <!-- 07 Iteración -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">07</span>
+                    <h2>Iterar con la encargada</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Presenté avances a la encargada del almacén y sus comentarios cambiaron el diseño
+                        en puntos que no había contemplado:
+                    </p>
+                    <div class="cs-learn">
+                        <article>
+                            <h3>Apartar material</h3>
+                            <p>Si una solicitud no se recoge, el material vuelve al stock. Agregué un aviso con el tiempo límite para recogerlo.</p>
+                        </article>
+                        <article>
+                            <h3>Préstamos de varios días</h3>
+                            <p>Algunos materiales se devuelven otro día. Añadí un mini calendario para elegir la fecha de devolución.</p>
+                        </article>
+                        <article>
+                            <h3>Pagar o reemplazar</h3>
+                            <p>Un adeudo puede saldarse mezclando pagos y reemplazos. El almacenista elige qué artículos se pagan y cuáles se reponen.</p>
+                        </article>
+                    </div>
+                    <p class="cs-next-steps">
+                        <strong>Hoy:</strong> el equipo de desarrollo está implementando el rediseño sobre el sistema
+                        en Django, y yo apoyo con el CSS para que el resultado sea fiel al diseño.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cierre -->
+        <section class="cs-end">
+            <div class="container cs-end__inner">
+                <img class="cs-end__sticker" src="../assets/stickers/PersonajeComputadora.svg" alt="" width="180" height="180">
+                <h2>¿Quieres ver más?</h2>
+                <div class="cs-end__buttons">
+                    <a href="../index.html#projects" class="btn btn--primary">← Volver a proyectos</a>
+                    <a href="optimatch.html" class="btn">Ver OptiMatch →</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__top">
+            <div class="footer__brand">
+                <a href="../index.html#home" class="footer__logo">
+                    <span class="footer__logo-icon">M</span>
+                    <span class="footer__logo-name">Marco Pérez</span>
+                </a>
+                <p class="footer__desc">
+                    Software Engineer &amp; UX/UI Designer. Diseño y código con energía retro.
+                </p>
+            </div>
+
+            <nav class="footer__nav" aria-label="Pie de página">
+                <a href="../index.html#home">Inicio</a>
+                <a href="../index.html#about">Sobre mí</a>
+                <a href="../index.html#skills">Habilidades</a>
+                <a href="../index.html#projects">Proyectos</a>
+                <a href="../index.html#contact">Contacto</a>
+            </nav>
+        </div>
+
+        <div class="container footer__bottom">
+            <small>© 2026 Marco Pérez</small>
+            <small>Hecho con mucha tinta y gustito.</small>
+        </div>
+    </footer>
+</body>
+</html>
