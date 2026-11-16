@@ -7,18 +7,18 @@ if (modal) {
 
   document.querySelectorAll('.cert-open').forEach((boton) => {
     boton.addEventListener('click', () => {
-      const tarjeta = boton.closest('.cert-card');         // sube hasta la tarjeta
+      const tarjeta = boton.closest('.cert-card');
       const img = tarjeta.querySelector('.cert-img');
 
-      modalImg.src = img.getAttribute('src');              // copia la imagen de esa tarjeta
+      modalImg.src = img.getAttribute('src');
       modalImg.alt = img.alt;
-      modalVerify.href = tarjeta.dataset.verify;           // lee data-verify del HTML
+      modalVerify.href = tarjeta.dataset.verify;
 
-      modal.showModal();                                   // abre con capa oscura y foco
+      modal.showModal();
     });
   });
 
-  // Cerrar al hacer clic en la capa oscura (fuera de la ventana)
+  // Cerrar al clic afuera
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.close();
   });
@@ -27,25 +27,25 @@ if (modal) {
 const random = (min, max) => Math.random() * (max - min) + min;
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-// Perillas para ajustar el efecto
+// Ajustes
 const STAR_SRC    = 'assets/stickers/EstrellasSinFondo.svg';
-const STAR_COUNT  = 6;     // estrellas al cargar
-const MAX_STARS   = 25;    // tope para no llenar la sección
-const SPAWN_EVERY = 900;   // ms entre una estrella nueva y otra
-const LIFE_MIN    = 4000;  // ms mínimos que una estrella se queda visible
-const LIFE_MAX    = 9000;  // ms máximos
-const LEAVE_MS    = 700;   // duración de la salida (la transition del CSS es 0.6s)
+const STAR_COUNT  = 6;     // al cargar
+const MAX_STARS   = 25;    // máximo en pantalla
+const SPAWN_EVERY = 900;   // ms entre estrellas
+const LIFE_MIN    = 4000;  // ms de vida mínima
+const LIFE_MAX    = 9000;  // ms de vida máxima
+const LEAVE_MS    = 700;   // ms de salida
 
 const starsLayer = document.querySelector('.stars-layer');
 const skills = document.querySelector('.skills');
 
-// Desvanece una estrella y la quita del HTML cuando termina
+// Desvanece y elimina
 function removeStar(star) {
   star.classList.add('is-leaving');
   setTimeout(() => star.remove(), LEAVE_MS);
 }
 
-// Cuando una estrella entra en pantalla: aparece y programa su salida
+// Aparece al entrar en pantalla
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
@@ -60,9 +60,9 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.3 });
 
-// Crea una estrella en la posición y tamaño que le digas
+// Crea una estrella
 function createStar({ x, y, size, delay = random(0, 1.5) }) {
-  // Si ya hay demasiadas, despide a la más vieja
+  // Respeta el máximo
   const alive = starsLayer.querySelectorAll('.star:not(.is-leaving)');
   if (alive.length >= MAX_STARS) removeStar(alive[0]);
 
@@ -90,10 +90,10 @@ const randomStar = () => ({
 });
 
 if (starsLayer && skills) {
-  // 1. Unas cuantas al cargar
+  // Iniciales
   for (let i = 0; i < STAR_COUNT; i++) createStar(randomStar());
 
-  // 2. Van naciendo más, solo mientras la sección está en pantalla
+  // Nuevas mientras se ve la sección
   if (!reduceMotion) {
     let spawnTimer = null;
 
@@ -109,9 +109,9 @@ if (starsLayer && skills) {
     sectionObserver.observe(skills);
   }
 
-  // 3. Una estrella donde hagas clic
+  // Estrella al hacer clic
   skills.addEventListener('click', (e) => {
-    // No crear estrellas si el clic fue en un link, botón o ticket
+    // Ignora links, botones y tickets
     if (e.target.closest('a, button, .ticket-wrapper')) return;
 
     const rect = starsLayer.getBoundingClientRect();
@@ -121,12 +121,12 @@ if (starsLayer && skills) {
       x: `${e.clientX - rect.left - size / 2}px`,
       y: `${e.clientY - rect.top - size / 2}px`,
       size,
-      delay: 0, // que aparezca al instante
+      delay: 0, // sin retraso
     });
   });
 }
 
-// ===== Nubes: cruzan de izquierda a derecha =====
+// ===== Nubes =====
 const clouds = document.querySelectorAll('.cloud');
 
 function setupClouds() {
@@ -134,29 +134,29 @@ function setupClouds() {
 
   clouds.forEach((cloud) => {
     const width = cloud.offsetWidth;
-    if (!width) return; // nube oculta (en móvil)
+    if (!width) return; // oculta en móvil
 
-    // Dónde está la nube "en reposo", sin contar la animación
+    // Posición sin animación
     const baseLeft = cloud.offsetParent.getBoundingClientRect().left + cloud.offsetLeft;
 
-    // Empieza justo fuera del borde izquierdo y termina justo fuera del derecho
+    // De borde a borde
     const from = -(baseLeft + width);
     const to = vw - baseLeft;
 
-    // Velocidad al azar, proporcional al tamaño: las grandes (más "cerca") van más rápido
-    if (!cloud.dataset.speed) cloud.dataset.speed = width * random(0.08, 0.16); // px por segundo
+    // Más grande, más rápida
+    if (!cloud.dataset.speed) cloud.dataset.speed = width * random(0.08, 0.16); // px/s
     const dur = (to - from) / cloud.dataset.speed;
 
     cloud.style.setProperty('--from', `${from}px`);
     cloud.style.setProperty('--to', `${to}px`);
     cloud.style.setProperty('--dur', `${dur}s`);
 
-    // Delay negativo: al cargar, cada nube ya va a la mitad de su camino
+    // Empieza a medio camino
     if (!cloud.dataset.started) {
       cloud.style.setProperty('--delay', `${-random(0, dur)}s`);
       cloud.dataset.started = 'true';
 
-      // Cada vez que vuelve a empezar (ya fuera de pantalla), cambia un poco de altura
+      // Nueva altura en cada vuelta
       cloud.addEventListener('animationiteration', () => {
         cloud.style.setProperty('--dy', `${random(-3, 3)}vw`);
       });
@@ -167,10 +167,55 @@ function setupClouds() {
 if (clouds.length) {
   setupClouds();
 
-  // Recalcular si cambia el ancho de la ventana (con un respiro para no hacerlo 100 veces)
+  // Recalcular al redimensionar
   let resizeTimer;
   window.addEventListener('resize', () => {
     clearTimeout(resizeTimer);
     resizeTimer = setTimeout(setupClouds, 200);
+  });
+}
+
+// ===== Certificaciones: destacada =====
+const certsGrid = document.getElementById('certs');
+const certsStatus = document.getElementById('certs-status');
+
+if (certsGrid) {
+  // Nombre único para la animación
+  certsGrid.querySelectorAll('.cert-card').forEach((card) => {
+    card.style.viewTransitionName = `cert-${card.dataset.cert}`;
+  });
+
+  certsGrid.addEventListener('click', (e) => {
+    const boton = e.target.closest('.cert-select');
+    if (!boton) return;
+
+    const nueva = boton.closest('.cert-card');
+    const actual = certsGrid.querySelector('.card-top');
+    if (!actual || nueva === actual) return;
+
+    const intercambiar = () => {
+      // Intercambia clases
+      const lugar = [...nueva.classList].find((c) => c.startsWith('card-'));
+      nueva.classList.replace(lugar, 'card-top');
+      actual.classList.replace('card-top', lugar);
+
+      // Intercambia posición
+      const siguiente = nueva.nextElementSibling;
+      certsGrid.insertBefore(nueva, actual);
+      certsGrid.insertBefore(actual, siguiente);
+
+      // Aviso y foco
+      if (certsStatus) {
+        certsStatus.textContent = `${nueva.querySelector('h3').textContent} ahora es la certificación destacada`;
+      }
+      nueva.querySelector('.cert-open').focus({ preventScroll: true });
+    };
+
+    // Animar si se puede
+    if (document.startViewTransition && !reduceMotion) {
+      document.startViewTransition(intercambiar);
+    } else {
+      intercambiar();
+    }
   });
 }

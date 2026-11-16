@@ -2,8 +2,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -1px;                       /* evita una línea fina de 1px por redondeo */
-  line-height: 0;                     /* quita el espacio extra de los elementos en línea */
+  bottom: -1px;                       /* evita línea de 1px */
+  line-height: 0;                     /* sin espacio inferior */
   z-index: 1;
   pointer-events: none;
   scale: -1 1;
@@ -13,6 +13,6 @@
   display: block;
   width: 100%;
   height: var(--curve-h, clamp(60px, 8vw, 120px));
-  fill: var(--divider-fill, #253B26); /* el color de la sección de abajo */
-  filter: drop-shadow(0 -6px 8px rgba(0, 0, 0, .35));  /* sombra hacia arriba, como en el Figma */
+  fill: var(--divider-fill, #253B26); /* color de la sección siguiente */
+  filter: drop-shadow(0 -6px 8px rgba(0, 0, 0, .35));  /* sombra hacia arriba */
 }

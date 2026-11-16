@@ -21,7 +21,7 @@
   transition: transform 0.2s, background 0.2s;
 }
 
-/* Los iconos de los botones se ven siempre blancos */
+/* Iconos en blanco */
 .btn img {
   width: 16px;
   height: 16px;

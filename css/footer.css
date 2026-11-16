@@ -1,11 +1,11 @@
-/* Paso 1: la caja */
+/* Caja */
 .footer {
   background-color: #30346F;
   padding-block: clamp(32px, 4vw, 56px) clamp(20px, 2.5vw, 32px);
   color: var(--cream);
 }
 
-/* Paso 2: la fila superior */
+/* Fila superior */
 .footer__top {
   display: flex;
   justify-content: space-between;
@@ -20,7 +20,7 @@
 .footer__logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;                              /* Figma: ~14px × 0.85 */
+  gap: 12px;
 }
 
 .footer__logo-icon {
@@ -31,7 +31,7 @@
   color: var(--navy);
   display: grid;
   place-items: center;
-  font-family: var(--font-heading);       /* la "M" del footer es Montserrat, no Bagel */
+  font-family: var(--font-heading);       /* la M usa Montserrat */
   font-weight: 900;
   font-size: 20px;
 }
@@ -40,7 +40,7 @@
   font-family: var(--font-heading);
   font-weight: 900;
   font-size: clamp(18px, 1.8vw, 24px);
-  color: var(--cream);                    /* sin text-transform: en el Figma es "Marco Pérez" */
+  color: var(--cream);                    /* sin mayúsculas */
 }
 
 .footer__desc {
@@ -53,7 +53,7 @@
 .footer__nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 26px;                      /* vertical | horizontal (el vertical sirve al apilarse en móvil) */
+  gap: 8px 26px;                      /* vertical | horizontal */
 }
 
 .footer__nav a {
@@ -68,7 +68,7 @@
 
 .footer__nav a:hover,
 .footer__nav a:focus-visible {
-  color: var(--yellow);               /* focus-visible: lo mismo para quien navega con teclado */
+  color: var(--yellow);               /* también con teclado */
 }
 .footer__bottom {
   position: relative;                 /* ancla de la línea */
@@ -76,15 +76,15 @@
   justify-content: space-between;     /* un texto en cada extremo */
   flex-wrap: wrap;
   gap: 8px 16px;
-  margin-top: clamp(28px, 3.2vw, 44px);   /* aire entre la nav y la línea */
-  padding-top: clamp(18px, 2vw, 28px);    /* aire entre la línea y el texto */
+  margin-top: clamp(28px, 3.2vw, 44px);   /* aire sobre la línea */
+  padding-top: clamp(18px, 2vw, 28px);    /* aire bajo la línea */
 }
 
 .footer__bottom::before {
   content: "";
   position: absolute;
   top: 0;
-  left: var(--gutter);                /* el mismo margen que usa .container */
+  left: var(--gutter);                /* mismo margen que .container */
   right: var(--gutter);
   height: 1px;
   background: var(--navy);

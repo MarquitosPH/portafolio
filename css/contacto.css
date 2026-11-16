@@ -1,10 +1,10 @@
 .contacto {
   position: relative;
   display: flex;
-  align-items: center;                       /* centra el texto en vertical */
-  min-height: clamp(420px, 55vw, 760px);     /* ~0.55 del ancho, como en Figma */
-  overflow: hidden;                          /* recorta lo que sobre del video */
-  background: #2F6B47;                       /* verde mientras carga el video */
+  align-items: center;                       /* centra en vertical */
+  min-height: clamp(420px, 55vw, 760px);     /* ~55% del ancho */
+  overflow: hidden;                          /* recorta el video */
+  background: #2F6B47;                       /* color mientras carga */
 }
 
 .contacto__video {
@@ -26,11 +26,11 @@
 }
 
 .contacto h2 {
-  max-width: 380px;                          /* Figma: 502px × 0.75 */
+  max-width: 380px;
   margin: 0;
   font-family: var(--font-display);          /* Bagel Fat One */
   font-weight: 400;
-  font-size: clamp(45px, 5vw, 72.5px);         /* Figma: 76.79px × 0.75 */
+  font-size: clamp(45px, 5vw, 72.5px);
   line-height: .95;
   color: var(--cream);
 }
@@ -44,7 +44,7 @@
   max-width: 380px;
   margin: 15px 0 0;
   font-family: var(--font-body);
-  font-size: clamp(16.20px, 1.25vw, 18px);       /* Figma: 18px × 0.75 */
+  font-size: clamp(16.20px, 1.25vw, 18px);
   line-height: 1.6;
   color: rgba(255, 255, 255, .85);
 }
@@ -53,11 +53,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 24px;                          /* Figma: 32px × 0.75 */
+  margin-top: 24px;
 }
 
 .contacto .btn--primary {
-  background: rgba(230, 222, 142, .85);      /* el Figma es 85%, no sólido */
+  background: rgba(230, 222, 142, .85);      /* 85% de opacidad */
   border-color: rgba(11, 11, 11, .25);
 }
 

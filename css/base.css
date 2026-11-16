@@ -1,4 +1,4 @@
-/* Variables: se definen una vez y se usan en todo el sitio */
+/* Variables */
 :root {
   --navy:   #262C6B;
   --cream:  #F2E8CF;
@@ -14,7 +14,7 @@
  --glass-shadow: 0 8px 32px rgba(11, 11, 11, 0.22);
   --glass-blur:   blur(14px);
 
-  /* Contenedor: ancho máximo y aire lateral compartidos por todas las secciones */
+  /* Contenedor */
   --container: 1296px;
   --gutter: clamp(24px, 6vw, 96px);
   --curve-h: clamp(60px, 8vw, 120px);
@@ -30,7 +30,7 @@ body {
   background: #f3f0f0;
 }
 
-/* Medios nunca más anchos que su contenedor (evita el scroll horizontal) */
+/* Evita scroll horizontal */
 img { max-width: 100%; height: auto; }
 video { max-width: 100%; }
 
@@ -38,7 +38,7 @@ a { color: inherit; text-decoration: none; }
 ul { list-style: none; margin: 0; padding: 0; }
 button { font: inherit; cursor: pointer; }
 
-/* Contenedor reutilizable: limita, centra y da aire lateral al contenido */
+/* Contenedor reutilizable */
 .container {
   width: 100%;
   max-width: var(--container);

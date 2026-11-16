@@ -1,6 +1,4 @@
-/* =========================================
-   SECCIÓN HABILIDADES
-   ========================================= */
+/* ---------- Habilidades ---------- */
 
 .skills {
   background-color: #0d0d0d;
@@ -35,14 +33,14 @@
   text-transform: uppercase;
 }
 
-/* ---------- Layout: personaje arriba, tickets abajo ---------- */
+/* ---------- Layout ---------- */
 .parent {
   position: relative;
-  z-index: 1;                 /* por encima de las estrellas */
+  z-index: 1;                 /* sobre las estrellas */
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: auto auto;     /* cada fila mide lo que ocupa su contenido */
-  gap: clamp(24px, 3vw, 45px) clamp(30px, 4vw, 60px);                   /* 60px entre filas, 80px entre tickets */
+  grid-template-rows: auto auto;     /* alto según contenido */
+  gap: clamp(24px, 3vw, 45px) clamp(30px, 4vw, 60px);                   /* filas | tickets */
   place-items: center;
   padding: 0 24px;
 }
@@ -59,14 +57,14 @@
 
 /* ---------- Tickets ---------- */
 .ticket-wrapper {
- font-size: clamp(8px, .83vw, 13.5px);            /* LA PERILLA: sube o baja y todo el ticket escala */
+ font-size: clamp(8px, .83vw, 13.5px);            /* escala todo el ticket */
   position: relative;
   transform: rotate(-4deg);
 }
 
 .ticket {
-  --s: 1.1em;                 /* tamaño del zigzag */
-  width: 21em;                /* 420px */
+  --s: 1.1em;                 /* zigzag */
+  width: 21em;
   padding: 3.15em 2.1em 2.45em;
   position: relative;
   filter: drop-shadow(6px 8px 0 rgba(0, 0, 0, 0.4));
@@ -74,7 +72,7 @@
   /* textura de papel */
   background: url('../assets/img/papel.png') center / cover;
 
-  /* bordes en zigzag arriba y abajo */
+  /* bordes en zigzag */
   -webkit-mask:
     conic-gradient(from -45deg at bottom, #0000, #000 1deg 89deg, #0000 90deg) bottom / var(--s) 50% repeat-x,
     conic-gradient(from 135deg at top,    #0000, #000 1deg 89deg, #0000 90deg) top    / var(--s) 50% repeat-x;
@@ -165,7 +163,7 @@
 /* ---------- Stickers animados ---------- */
 .sticker--dedos-cruzados {
   --w: clamp(52px, 6vw, 98px); 
-  --crop: 0;                 /* cuánto brazo se esconde fuera del borde (0 a .5) */
+  --crop: 0;                 /* brazo oculto (0 a .5) */
   position: absolute;
   width: var(--w);
   height: auto;
@@ -176,7 +174,7 @@
   transform-origin: calc((1 - var(--crop)) * 100%) 81%;
   animation: sway-der 3s ease-in-out infinite;
 }
-/* IZQUIERDA */
+/* Izquierda */
 .sticker--dedos-izq {
   right: auto;
   top: auto;
@@ -186,20 +184,20 @@
   transform-origin: 0% 81%;
   animation: sway-izq 3s ease-in-out infinite;
 }
-/* IZQUIERDA: baja primero con +10deg */
+/* Balanceo izquierdo */
 @keyframes sway-izq {
   0%, 100% { rotate:  10deg; }
   50%      { rotate: -10deg; }
 }
 
-/* DERECHA: giro contrario, así baja al mismo tiempo que la izquierda */
+/* Balanceo derecho */
 @keyframes sway-der {
   0%, 100% { rotate: -8deg; }
   50%      { rotate:  8deg; }
 }
 /* ---------- Estrellas ---------- */
 
-/* Capa donde viven las estrellas aleatorias y las del clic */
+/* Capa de estrellas */
 .stars-layer {
   position: absolute;
   inset: 0;
@@ -208,7 +206,7 @@
   z-index: 0;
 }
 
-/* Estado inicial: invisible, chica y girada */
+/* Inicial: oculta */
 .star {
   opacity: 0;
   scale: 0.3;
@@ -219,7 +217,7 @@
     rotate 0.6s ease var(--delay, 0s);
 }
 
-/* Estado final + flotación continua */
+/* Visible + flotación */
 .star.is-visible {
   opacity: 1;
   scale: 1;
@@ -227,7 +225,7 @@
   animation: star-float var(--dur, 4s) ease-in-out var(--delay, 0s) infinite;
 }
 
-/* Salida: se desvanece, se encoge y gira (JS la quita después) */
+/* Salida */
 .star.is-visible.is-leaving {
   opacity: 0;
   scale: 0.3;
@@ -240,7 +238,7 @@
   50%      { translate: 0 -12px; }
 }
 
-/* Estrellas creadas por JS: posición y tamaño vienen de las variables */
+/* Estrellas generadas por JS */
 .star--random {
   position: absolute;
   left: var(--x);
@@ -248,12 +246,12 @@
   width: var(--size);
 }
 
-/* En los tickets no se crean estrellas, así que el cursor vuelve a normal */
+/* Cursor normal en tickets */
 .skills .ticket-wrapper {
   cursor: auto;
 }
 
-/* Pista para que la gente sepa que puede hacer clic */
+/* Pista de clic */
 .skills__hint {
   position: relative;
   z-index: 1;
@@ -267,7 +265,7 @@
   opacity: 0.6;
 }
 
-/* Accesibilidad: sin movimiento para quien lo tenga desactivado */
+/* Movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
   .star {
     opacity: 1;
