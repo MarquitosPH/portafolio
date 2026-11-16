@@ -17,6 +17,8 @@
   /* Contenedor: ancho máximo y aire lateral compartidos por todas las secciones */
   --container: 1296px;
   --gutter: clamp(24px, 6vw, 96px);
+  --curve-h: clamp(60px, 8vw, 120px);
+  --arch-h: clamp(50px, 7vw, 100px); 
 }
 
 /* Reset mínimo */

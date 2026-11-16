@@ -1,14 +1,16 @@
 .certifications {
   position: relative;
-  z-index: 2;                      /* por encima de contacto: la sombra se pinta sobre el verde */
+  z-index: 0;                      /* por encima de contacto: la sombra se pinta sobre el verde */
   background-color: #6766CC;
+   margin-top: calc(var(--arch-h) * -1);
+  padding-top: calc(var(--arch-h) + 60px); 
 
   --floor: 14.65vw;                /* alto real del SVG (211/1440 de su ancho) */
   --floor-shadow: 3.3vw;           /* ~23% inferior del SVG: es solo sombra */
 
   padding-block: clamp(36px, 4.5vw, 72px);
   padding-bottom: calc(var(--floor) - var(--floor-shadow) + 4vw);  /* piso visible + aire sobre él */
-
+  padding-top: calc(var(--arch-h) + 3rem);
   overflow-x: clip;                /* recorta las nubes por los lados */
   overflow-y: visible;             /* deja salir la sombra hacia abajo */
 }
@@ -208,6 +210,13 @@
   z-index: 0;                    /* ← por encima de las tarjetas (ver nota) */
   height: auto;
   pointer-events: none;  
+  /* Cruza la sección: JS calcula --from/--to (px) y --dur/--delay para cada nube */
+  animation: cloud-drift var(--dur, 60s) linear var(--delay, 0s) infinite;
+}
+
+@keyframes cloud-drift {
+  from { translate: var(--from, 0px) var(--dy, 0px); }
+  to   { translate: var(--to, 0px)   var(--dy, 0px); }
 }
 .cloud-1 { width: 18.5vw; left: -1%;  top: 6.5vw; }    /* grande, izquierda, detrás del título */
 .cloud-2 { width: 16vw;   left: -5%;  top: 31vw;  }    /* izquierda, medio tapada por la tarjeta */
@@ -218,4 +227,9 @@
 @media (max-width: 700px) {
   .cloud-2,
   .cloud-4 { display: none; }              /* menos ruido en móvil */
+}
+
+/* Accesibilidad: las nubes se quedan quietas en su lugar */
+@media (prefers-reduced-motion: reduce) {
+  .cloud { animation: none; }
 }

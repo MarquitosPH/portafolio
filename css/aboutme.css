@@ -17,6 +17,28 @@
   font-style: normal;
 }
 /* 2. Estilos de la sección */
+.about::before,
+.about::after {
+  content: "";                     /* sin esto no existen */
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: var(--curve-h);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  filter: drop-shadow(20px 8px 4px rgba(0, 0, 0, .25));
+  pointer-events: none;
+}
+.about::before {
+  top: 0;
+  background-image: var(--curve-top-shadow);
+}
+
+.about::after {
+  bottom: 0;
+  background-image: var(--curve-bottom-shadow);
+  filter: drop-shadow(20px -8px 4px rgba(0, 0, 0, .25)); 
+}
 .about {
   position: relative;
   min-height: 594px;
@@ -36,22 +58,26 @@
     /* 4. motitas claras */
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='k'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='2' seed='21' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .8  0 0 0 0 .95  0 0 0 0 .75  0 0 0 1.6 -.82'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23k)' opacity='.5'/%3E%3C/svg%3E");
   background-size: 100% 100%, 100% 100%, 300px 300px, 300px 300px;
-    --curve-h: clamp(60px, 8vw, 120px);
   --curve: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 70 C 240 18, 460 18, 700 60 S 1120 112, 1440 44 V120 H0 Z'/%3E%3C/svg%3E");
 
-  margin-top: calc(var(--curve-h) * -1);              /* sube y se mete bajo la curva sobre el hero */
-  padding-top: calc(var(--curve-h) + 30px);           /* para que el contenido no quede en la curva */
+  --curve-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 50 C 240 102, 460 102, 700 60 S 1120 8, 1440 76 V0 H0 Z'/%3E%3C/svg%3E");
+  --curve-top-shadow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 70 C 240 18, 460 18, 700 60 S 1120 112, 1440 44 V0 H0 Z'/%3E%3C/svg%3E");
+  --curve-bottom-shadow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 50 C 240 102, 460 102, 700 60 S 1120 8, 1440 76 V120 H0 Z'/%3E%3C/svg%3E");
+
+  margin-top: calc(var(--curve-h) * -1);
+  padding-top: calc(var(--curve-h) + 30px);
+  padding-bottom: calc(var(--curve-h) + 40px);
   z-index: 1;
 
-  -webkit-mask-image: var(--curve), linear-gradient(#000, #000);
-  mask-image: var(--curve), linear-gradient(#000, #000);
-  -webkit-mask-size: 100% var(--curve-h), 100% calc(100% - var(--curve-h) + 1px);
-  mask-size: 100% var(--curve-h), 100% calc(100% - var(--curve-h) + 1px);
-  -webkit-mask-position: top, bottom;
-  mask-position: top, bottom;
+  -webkit-mask-image: var(--curve), linear-gradient(#000, #000), var(--curve-bottom);
+  mask-image: var(--curve), linear-gradient(#000, #000), var(--curve-bottom);
+  -webkit-mask-size: 100% var(--curve-h), 100% calc(100% - 2 * var(--curve-h) + 2px), 100% var(--curve-h);
+  mask-size: 100% var(--curve-h), 100% calc(100% - 2 * var(--curve-h) + 2px), 100% var(--curve-h);
+  -webkit-mask-position: top, center, bottom;
+  mask-position: top, center, bottom;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-/*               viñeta     manchas    grano oscuro  motitas */
+
 }
 
 .about__inner {
@@ -121,5 +147,38 @@ p#about-details {
   border: 1px solid rgba(230, 222, 142, 0.6);
 }
 
+/* ---------- Stickers decorativos ----------
+   Horizontal: se miden desde el CENTRO de la sección (50%), así en pantallas
+   grandes se quedan cerca del contenido en vez de irse a las orillas.
+   min(Xvw, Ypx): en pantallas chicas se acercan; en grandes, tope en px. */
+.about .sticker {
+  height: auto;
+  z-index: 1;
+  pointer-events: none;
+}
 
+/* Estrellas amarillas de 4 picos (EstrellaRedondeada.svg): a los lados del título */
+.sticker--estrella-redondeada {
+  width: clamp(48px, 6.7vw, 98px);
+  top: calc(var(--curve-h) + 20px);           /* alineada con el título */
+  left: calc(50% - min(42.4vw, 620px));
+}
 
+.sticker--estrella-der {
+  left: auto;
+  right: calc(50% - min(41.9vw, 615px));
+}
+
+/* Estrella naranja con cara (EstrellaAmarilla.svg): a la izquierda, a la altura del personaje */
+.sticker--estrella {
+  width: clamp(44px, 6.1vw, 90px);
+  top: 43%;
+  left: calc(50% - min(47vw, 690px));
+}
+
+/* Corazón: a la derecha, a la altura de las pills */
+.sticker--corazon {
+  width: clamp(72px, 10.4vw, 153px);
+  bottom: calc(var(--curve-h) + 15px);
+  right: calc(50% - min(48.9vw, 716px));
+}

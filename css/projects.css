@@ -7,8 +7,56 @@
 
   padding-block: clamp(36px, 4.5vw, 72px);   /* aire arriba y abajo */
   overflow: hidden;                          /* mismo motivo que en las otras secciones */
-}
+  --arch: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 120 C 240 -40, 1200 -40, 1440 120 Z'/%3E%3C/svg%3E");
+  --arch-shadow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 120 C 240 -40, 1200 -40, 1440 120 V0 H0 Z'/%3E%3C/svg%3E");
+    --arch-bottom: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 240 160, 1200 160, 1440 0 Z'/%3E%3C/svg%3E");
+  --arch-bottom-shadow: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' preserveAspectRatio='none'%3E%3Cpath d='M0 0 C 240 160, 1200 160, 1440 0 V120 H0 Z'/%3E%3C/svg%3E");
 
+
+  position: relative;
+  z-index: 1;                                          /* encima de Skills (z-index: 0) */
+  margin-top: calc(var(--arch-h) * -1);
+  padding-top: calc(var(--arch-h) * .5 + clamp(36px, 4.5vw, 72px));            /* cambia 60px por tu padding-top actual */
+    padding-bottom: calc(var(--arch-h) + clamp(36px, 4.5vw, 72px));
+
+  -webkit-mask-image: var(--arch), linear-gradient(#000, #000);
+  mask-image: var(--arch), linear-gradient(#000, #000);
+  -webkit-mask-size: 100% var(--arch-h), 100% calc(100% - var(--arch-h) + 1px);
+  mask-size: 100% var(--arch-h), 100% calc(100% - var(--arch-h) + 1px);
+  -webkit-mask-position: top, bottom;
+  mask-position: top, bottom;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+
+  -webkit-mask-image: var(--arch), linear-gradient(#000, #000), var(--arch-bottom);
+  mask-image: var(--arch), linear-gradient(#000, #000), var(--arch-bottom);
+  -webkit-mask-size: 100% var(--arch-h), 100% calc(100% - 2 * var(--arch-h) + 2px), 100% var(--arch-h);
+  mask-size: 100% var(--arch-h), 100% calc(100% - 2 * var(--arch-h) + 2px), 100% var(--arch-h);
+  -webkit-mask-position: top, center, bottom;
+  mask-position: top, center, bottom;
+}
+.projects::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--arch-h);
+  background: var(--arch-bottom-shadow) no-repeat center / 100% 100%;
+  filter: drop-shadow(20px -8px 4px rgba(0, 0, 0, .25));   /* Y negativa: borde de abajo */
+  pointer-events: none;
+}
+.projects::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--arch-h);
+  background: var(--arch-shadow) no-repeat center / 100% 100%;
+  filter: drop-shadow(20px 8px 4px rgba(0, 0, 0, .25));
+  pointer-events: none;
+}
 .projects__inner {
   position: relative;
   --container: 1020px;      /* ← ancla de los stickers (decisión B) */
