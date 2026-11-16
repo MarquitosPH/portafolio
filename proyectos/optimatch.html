@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Caso de estudio de OptiMatch: app web que detecta la forma de tu rostro y recomienda los lentes ideales. Diseño UX/UI y desarrollo por Marco Pérez.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Montserrat:wght@900&family=Space+Grotesk:wght@400;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" href="../assets/img/favicon.svg">
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/buttons.css">
+    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="../css/case-study.css">
+
+    <title>OptiMatch | Marco Pérez</title>
+</head>
+<body class="cs-page">
+    <header class="site-header">
+        <nav aria-label="Principal">
+            <div class="logo">
+                <a href="../index.html#home" class="logo-link">
+                    <span class="logo__icon">M</span>
+                    <span class="logo__name">Marco Perez</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html#home">Inicio</a></li>
+                <li><a href="../index.html#about">Sobre mi</a></li>
+                <li><a href="../index.html#skills">Habilidades</a></li>
+                <li><a href="../index.html#projects">Proyectos</a></li>
+                <li><a href="../index.html#contact">Contacto</a></li>
+            </ul>
+            <button type="button" class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Portada -->
+        <section class="cs-hero">
+            <div class="container cs-hero__inner">
+                <a class="cs-back" href="../index.html#projects">← Volver a proyectos</a>
+
+                <p class="cs-eyebrow">Caso de estudio · UX/UI + IA</p>
+                <h1 class="cs-hero__title">OptiMatch</h1>
+                <p class="cs-hero__lead">
+                    App web que detecta la forma de tu rostro con inteligencia artificial
+                    y te recomienda los armazones que mejor te quedan, con prueba virtual en tiempo real.
+                </p>
+
+                <dl class="cs-meta">
+                    <div>
+                        <dt>Rol</dt>
+                        <dd>Diseño UX/UI y desarrollo</dd>
+                    </div>
+                    <div>
+                        <dt>Duración</dt>
+                        <dd>6 meses · 2025–2026</dd>
+                    </div>
+                    <div>
+                        <dt>Contexto</dt>
+                        <dd>Proyecto personal para la materia Tecnologías Emergentes, UABC</dd>
+                    </div>
+                    <div>
+                        <dt>Herramientas</dt>
+                        <dd>Figma · Python · FastAPI · HTML/CSS/JS · SQLite</dd>
+                    </div>
+                </dl>
+
+                <div class="cs-hero__buttons">
+                    <a href="https://github.com/MarquitosPH/face-recognition-mediapipe" target="_blank" rel="noopener noreferrer" class="btn">
+                        Ver repositorio
+                        <img src="../assets/icons/github.svg" alt="" width="16" height="16">
+                    </a>
+                </div>
+            </div>
+
+            <figure class="container cs-hero__shot">
+                <div class="cs-browser">
+                    <span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                    <img src="../assets/img/optimatch/app/app-inicio.webp" width="1440" height="900"
+                         alt="Pantalla de inicio de OptiMatch con el mensaje Encuentra tus lentes perfectos">
+                </div>
+            </figure>
+        </section>
+
+        <!-- 01 Problema -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">01</span>
+                    <h2>El problema</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Comprar lentes en línea es adivinar. La mayoría de las personas no sabe qué
+                        forma de rostro tiene ni qué armazón le favorece, y como no se los puede probar,
+                        termina comprando con inseguridad o devolviendo el producto.
+                    </p>
+                    <blockquote class="cs-quote">
+                        ¿Cómo podríamos ayudar a las personas a ver cómo les quedan los lentes
+                        <em>antes</em> de comprarlos en línea?
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- 02 Investigación -->
+        <section class="cs-section cs-section--alt">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">02</span>
+                    <h2>Investigación</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Antes de diseñar quise entender a quién le estaba resolviendo el problema.
+                        Combiné métodos cualitativos y cuantitativos:
+                    </p>
+                    <ul class="cs-pills">
+                        <li>Entrevistas a profundidad</li>
+                        <li>Encuesta a +20 personas</li>
+                        <li>Benchmarking de 4 ópticas</li>
+                        <li>Mapa de empatía</li>
+                        <li>Crazy 8s</li>
+                    </ul>
+
+                    <h3>Lo que descubrí</h3>
+                    <ul class="cs-list">
+                        <li>Casi nadie conoce su forma de rostro, y eso genera inseguridad al comprar.</li>
+                        <li>Las personas sí usarían un análisis facial si es rápido, sencillo y no invasivo.</li>
+                        <li>La confianza sube cuando el sistema <strong>explica por qué</strong> recomienda algo.</li>
+                    </ul>
+
+                    <div class="cs-personas">
+                        <article class="cs-persona">
+                            <span class="cs-persona__tag">User persona</span>
+                            <h4>Sofía, 28</h4>
+                            <p class="cs-persona__role">La compradora insegura</p>
+                            <p>Compra en línea seguido, pero nunca sabe si un armazón le va a quedar. Necesita claridad antes de pagar.</p>
+                        </article>
+                        <article class="cs-persona">
+                            <span class="cs-persona__tag">User persona</span>
+                            <h4>Miguel, 35</h4>
+                            <p class="cs-persona__role">El asesor de óptica</p>
+                            <p>Recomienda armazones todos los días sin herramientas que respalden su consejo. Necesita algo rápido para mostrarle opciones al cliente.</p>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 Wireframes -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">03</span>
+                    <h2>Del boceto al wireframe</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Ordené la información según el modelo mental del usuario: primero conoce su rostro,
+                        luego ve sus recomendaciones y al final explora con libertad.
+                    </p>
+                    <ol class="cs-flow" aria-label="Flujo principal">
+                        <li>Inicio</li>
+                        <li>Análisis</li>
+                        <li>Procesando</li>
+                        <li>Resultados</li>
+                        <li>Detalle</li>
+                        <li>Prueba virtual</li>
+                    </ol>
+                    <p>
+                        Empecé con bocetos en papel y los probé con usuarios (paper testing) antes de
+                        tocar código. Eso me ahorró errores caros:
+                    </p>
+                    <ul class="cs-list">
+                        <li>La cámara no decía cómo posicionarse → agregué un <strong>óvalo guía</strong> e instrucciones.</li>
+                        <li>Nadie entendía qué pasaba tras el análisis → agregué la pantalla de <strong>"procesando"</strong>.</li>
+                        <li>Perfil y favoritos sumaban complejidad sin aportar → los <strong>quité</strong>.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="cs-gallery" tabindex="0" aria-label="Galería de wireframes, desplázate horizontalmente">
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-01-inicio.webp" alt="Wireframe de la pantalla de inicio"><figcaption>Inicio</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-02-captura.webp" alt="Wireframe para elegir cómo capturar el rostro"><figcaption>Captura</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-03-camara.webp" alt="Wireframe de la cámara para escanear el rostro"><figcaption>Cámara</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-04-procesando.webp" alt="Wireframe de la pantalla de carga con porcentaje"><figcaption>Procesando</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-05-resultados.webp" alt="Wireframe de resultados con el tipo de rostro y lentes recomendados"><figcaption>Resultados</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-06-descripcion.webp" alt="Wireframe de la descripción del análisis"><figcaption>Descripción</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-07-guia.webp" alt="Wireframe de la guía de formas de rostro"><figcaption>Guía</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-08-detalle.webp" alt="Wireframe del detalle de un lente"><figcaption>Detalle</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-09-prueba-ar.webp" alt="Wireframe de la prueba virtual con cámara"><figcaption>Prueba AR</figcaption></figure>
+                <figure><img loading="lazy" src="../assets/img/optimatch/wireframes/wf-10-catalogo.webp" alt="Wireframe del catálogo de lentes"><figcaption>Catálogo</figcaption></figure>
+            </div>
+        </section>
+
+        <!-- 04 Solución -->
+        <section class="cs-section cs-section--dark">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">04</span>
+                    <h2>La solución</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Construí el frontend a mano en HTML, CSS y JavaScript, conectado a un backend en
+                        Python. Así tuve control total del código y un sistema de diseño consistente en las 9 pantallas.
+                    </p>
+                </div>
+            </div>
+
+            <div class="container cs-shots">
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/optimatch/app/app-analisis.webp" width="1440" height="900" alt="Pantalla Analiza tu rostro con el área para tomar o subir una foto">
+                    </div>
+                    <figcaption><strong>Análisis.</strong> Tomas una foto o la subes, con consejos de iluminación y postura.</figcaption>
+                </figure>
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/optimatch/app/app-resultados.webp" width="1440" height="900" alt="Pantalla Tus recomendaciones con filtros y lentes marcados como Top match">
+                    </div>
+                    <figcaption><strong>Resultados.</strong> Lentes ordenados por compatibilidad, con filtros por estilo y material.</figcaption>
+                </figure>
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/optimatch/app/app-detalle.webp" width="1440" height="900" alt="Detalle del lente Browline style con 94% de compatibilidad y botón Probar virtualmente">
+                    </div>
+                    <figcaption><strong>Detalle.</strong> El % de compatibilidad explica la recomendación, y de aquí saltas a la prueba virtual.</figcaption>
+                </figure>
+                <figure class="cs-shot">
+                    <div class="cs-browser"><span class="cs-browser__bar" aria-hidden="true"><i></i><i></i><i></i></span>
+                        <img loading="lazy" src="../assets/img/optimatch/app/app-catalogo.webp" width="1440" height="900" alt="Catálogo de armazones con buscador y filtros por estilo">
+                    </div>
+                    <figcaption><strong>Catálogo.</strong> Para explorar libremente con búsqueda y filtros.</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <!-- 05 IA -->
+        <section class="cs-section">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">05</span>
+                    <h2>La inteligencia detrás</h2>
+                </header>
+                <div class="cs-section__body">
+                    <p>
+                        Mi primer intento fue medir el rostro con reglas geométricas, pero los resultados
+                        cambiaban con la luz o con un pequeño giro de la cabeza. Así que cambié de estrategia:
+                        <strong>entrené un modelo de inteligencia artificial</strong> con fotos de rostros
+                        para que aprendiera a reconocer 5 formas: ovalado, redondo, cuadrado, largo y diamante.
+                    </p>
+                    <div class="cs-stats">
+                        <div class="cs-stat">
+                            <span class="cs-stat__value">&lt;65%</span>
+                            <span class="cs-stat__label">Precisión con reglas geométricas</span>
+                        </div>
+                        <div class="cs-stat cs-stat--accent">
+                            <span class="cs-stat__value">80.8%</span>
+                            <span class="cs-stat__label">Precisión con el modelo entrenado</span>
+                        </div>
+                    </div>
+                    <p>
+                        Para la <strong>prueba virtual</strong>, los lentes en 3D se colocan sobre tu cara y
+                        siguen el movimiento de tu cabeza en tiempo real, directo en el navegador. Así no hay
+                        retraso y tu imagen no sale de tu dispositivo.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 Aprendizajes -->
+        <section class="cs-section cs-section--alt">
+            <div class="container cs-grid">
+                <header class="cs-section__head">
+                    <span class="cs-num">06</span>
+                    <h2>Lo que aprendí</h2>
+                </header>
+                <div class="cs-section__body">
+                    <div class="cs-learn">
+                        <article>
+                            <h3>Probar temprano sale barato</h3>
+                            <p>La primera prueba de usabilidad dio un SUS de 47.5. Esa calificación baja me obligó a rehacer la navegación y la retroalimentación del sistema antes de que fuera tarde.</p>
+                        </article>
+                        <article>
+                            <h3>Cambiar de rumbo es parte del proceso</h3>
+                            <p>Dos de mis primeras soluciones técnicas no funcionaron. Aceptarlo rápido y buscar otra ruta fue lo que hizo que el proyecto saliera adelante.</p>
+                        </article>
+                        <article>
+                            <h3>Diseñar y programar se complementan</h3>
+                            <p>Entender el código me ayudó a diseñar cosas posibles, y entender al usuario me ayudó a decidir qué programar primero.</p>
+                        </article>
+                    </div>
+                    <p class="cs-next-steps">
+                        <strong>Siguiente paso:</strong> darle más visibilidad a la prueba virtual en la interfaz
+                        y entrenar el modelo con más fotos para mejorar las formas que más se confunden.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cierre -->
+        <section class="cs-end">
+            <div class="container cs-end__inner">
+                <img class="cs-end__sticker" src="../assets/stickers/PersonajeComputadora.svg" alt="" width="180" height="180">
+                <h2>¿Quieres ver más?</h2>
+                <div class="cs-end__buttons">
+                    <a href="../index.html#projects" class="btn btn--primary">← Volver a proyectos</a>
+                    <a href="https://github.com/MarquitosPH/face-recognition-mediapipe" target="_blank" rel="noopener noreferrer" class="btn">
+                        Ver repositorio
+                        <img src="../assets/icons/github.svg" alt="" width="16" height="16">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__top">
+            <div class="footer__brand">
+                <a href="../index.html#home" class="footer__logo">
+                    <span class="footer__logo-icon">M</span>
+                    <span class="footer__logo-name">Marco Pérez</span>
+                </a>
+                <p class="footer__desc">
+                    Software Engineer &amp; UX/UI Designer. Diseño y código con energía retro.
+                </p>
+            </div>
+
+            <nav class="footer__nav" aria-label="Pie de página">
+                <a href="../index.html#home">Inicio</a>
+                <a href="../index.html#about">Sobre mí</a>
+                <a href="../index.html#skills">Habilidades</a>
+                <a href="../index.html#projects">Proyectos</a>
+                <a href="../index.html#contact">Contacto</a>
+            </nav>
+        </div>
+
+        <div class="container footer__bottom">
+            <small>© 2026 Marco Pérez</small>
+            <small>Hecho con mucha tinta y gustito.</small>
+        </div>
+    </footer>
+</body>
+</html>

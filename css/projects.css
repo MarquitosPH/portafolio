@@ -109,10 +109,11 @@
 }
 .card-content {
   position: absolute;
-  inset: auto 0 0 0;
+  inset: 0;                      /* cubre la tarjeta para el enlace */
   z-index: 1;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;     /* texto abajo */
   align-items: flex-start;
   padding: clamp(7px, 1.1vw, 16px);
   gap: 6px;
@@ -142,6 +143,22 @@
     line-height: 1.05;
     color: var(--cream);
 }
+/* Toda la tarjeta lleva al proyecto (solo si ya tiene página) */
+.card-content h3 a:not([href="#"])::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.card-content h3 a:focus-visible {
+  outline: none;
+}
+
+.project-card:has(a:focus-visible) {
+  outline: 3px solid var(--yellow);
+  outline-offset: 4px;
+}
+
 .sticker--naranja-con-manos,
 .sticker--cafe {
   position: absolute;
